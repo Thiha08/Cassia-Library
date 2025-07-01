@@ -1,0 +1,30 @@
+.pageWrapper.mapspace {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/*.customizerBtn {
+  position: fixed;
+  z-index: 9;
+  cursor: grab;
+  transition: transform 0.2s ease-in-out;
+}
+
+.customizerBtn:active {
+  cursor: grabbing;
+}
+*/
+
+.controlBtn {
+  width: 60px;
+  height: 60px;
+  cursor: grab;
+
+  button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+}

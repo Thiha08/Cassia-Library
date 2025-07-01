@@ -1,0 +1,148 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.0785, 19.7633] },
+      "properties": {
+        "id": "2025-04-01-1",
+        "date": "2025-04-01",
+        "type": "ceasefire",
+        "locationName": "Naypyidaw",
+        "description": "The Three Brotherhood Alliance announces a 1-month partial ceasefire, pausing offensives."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.0785, 19.7633] },
+      "properties": {
+        "id": "2025-04-01-2",
+        "date": "2025-04-01",
+        "type": "announcement",
+        "locationName": "Naypyidaw",
+        "description": "Min Aung Hlaing announces on Myawaddy TV he will continue operations against the PDF and anti-junta EAOs."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [97.9314, 23.8617] },
+      "properties": {
+        "id": "2025-04-02-1",
+        "date": "2025-04-02",
+        "type": "warning_shots",
+        "locationName": "Muse",
+        "description": "The junta fires warning shots at a Chinese Red Cross aid convoy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.0785, 19.7633] },
+      "properties": {
+        "id": "2025-04-02-2",
+        "date": "2025-04-02",
+        "type": "ceasefire",
+        "locationName": "Naypyidaw",
+        "description": "Min Aung Hlaing announces a 20-day ceasefire until April 22."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [97.3962, 25.3740] },
+      "properties": {
+        "id": "2025-04-02-3",
+        "date": "2025-04-02",
+        "type": "ceasefire",
+        "locationName": "Myitkyina",
+        "description": "The KIA announces a ceasefire, reserving the right to defend themselves."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.3967, 18.9416] },
+      "properties": {
+        "id": "2025-04-02-4",
+        "date": "2025-04-02",
+        "type": "base_capture",
+        "locationName": "Taungoo",
+        "description": "Arakan Army captures Nyaung Kyoke hill base along the Taungoo–Pantanaw road (Bago Region border)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.8660, 24.4750] },
+      "properties": {
+        "id": "2025-04-03-1",
+        "date": "2025-04-03",
+        "type": "air_bombing",
+        "locationName": "Indaw (Sagaing Region)",
+        "description": "The junta conducts an aerial bombing campaign in Indaw."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [97.3690, 25.9652] },
+      "properties": {
+        "id": "2025-04-03-2",
+        "date": "2025-04-03",
+        "type": "artillery",
+        "locationName": "Bhamo (Kachin State)",
+        "description": "The junta continues firing artillery in Bhamo."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [97.7500, 22.9500] },
+      "properties": {
+        "id": "2025-04-04-1",
+        "date": "2025-04-04",
+        "type": "administrative_agreement",
+        "locationName": "Lashio",
+        "description": "MNDAA and SAC junta agree to jointly administer Lashio District under Chinese negotiations."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [93.6667, 22.6667] },
+      "properties": {
+        "id": "2025-04-07-1",
+        "date": "2025-04-07",
+        "type": "base_capture",
+        "locationName": "Falam (Chin State)",
+        "description": "Falam falls under Chin Brotherhood Alliance control after capturing LIB 268."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [96.8660, 24.4750] },
+      "properties": {
+        "id": "2025-04-07-2",
+        "date": "2025-04-07",
+        "type": "base_capture",
+        "locationName": "Indaw (Sagaing Region)",
+        "description": "KIA, PDF, and ABSDF forces capture Indaw; Aung Thet Oo is taken prisoner."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [95.0990, 21.3343] },
+      "properties": {
+        "id": "2025-04-10-1",
+        "date": "2025-04-10",
+        "type": "attack",
+        "locationName": "Pakokku (Magway Region)",
+        "description": "Major Thaw Zin Oo’s vehicle attacked near Pakokku, killing him and another passenger."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [97.7500, 22.9500] },
+      "properties": {
+        "id": "2025-04-18-1",
+        "date": "2025-04-18",
+        "type": "reentry",
+        "locationName": "Lashio",
+        "description": "SAC junta and police re-enter Lashio; MNDAA retains outskirts under agreement."
+      }
+    }
+  ]
+}

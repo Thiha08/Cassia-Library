@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-lg-6">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Radialbar
+      </h4>
+      <div output>
+        <apx-chart [series]="radialbarChartOptions.series" [chart]="radialbarChartOptions.chart"
+          [dataLabels]="radialbarChartOptions.dataLabels" [plotOptions]="radialbarChartOptions.plotOptions"
+          [legend]="radialbarChartOptions.legend" [colors]="radialbarChartOptions.colors"
+          [tooltip]="radialbarChartOptions.tooltip">
+        </apx-chart>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForRadialbarChart"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForRadialbarChartTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+  </div>
+  <div class="col-lg-6">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Radar
+      </h4>
+      <div output>
+        <apx-chart [series]="radarChartOptions.series" [chart]="radarChartOptions.chart"
+          [dataLabels]="radarChartOptions.dataLabels" [plotOptions]="radarChartOptions.plotOptions"
+          [legend]="radarChartOptions.legend" [colors]="radarChartOptions.colors" [tooltip]="radarChartOptions.tooltip">
+        </apx-chart>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForRadarChart"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForRadarChartTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+  </div>
+</div>

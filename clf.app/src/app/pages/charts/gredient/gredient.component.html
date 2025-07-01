@@ -1,0 +1,29 @@
+<app-code-view [isTitle]="true">
+  <!-- output view -->
+  <h4 Ctitle>
+    Gredient Chart
+  </h4>
+  <div output>
+    <apx-chart [series]="gredientChartOptions.series" [chart]="gredientChartOptions.chart"
+      [stroke]="gredientChartOptions.stroke" [xaxis]="gredientChartOptions.xaxis" [fill]="gredientChartOptions.fill"
+      [markers]="gredientChartOptions.markers" [yaxis]="gredientChartOptions.yaxis"
+      [plotOptions]="gredientChartOptions.plotOptions" [tooltip]="gredientChartOptions.tooltip"
+      [grid]="gredientChartOptions.grid">
+    </apx-chart>
+  </div>
+  <!-- html view -->
+  <div htmlView>
+    <pre>
+      <code [highlight]="codeForGredientChart"
+            language="html"
+            lineNumbers></code>
+    </pre>
+  </div>
+  <!-- typescript view -->
+  <div tsView>
+    <pre>
+      <code [highlightAuto]="codeForGredientChartTs"   language="ts"
+            lineNumbers></code>
+    </pre>
+  </div>
+</app-code-view>

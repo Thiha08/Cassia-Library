@@ -1,0 +1,29 @@
+<app-code-view [isTitle]="true">
+  <!-- output view -->
+  <h4 Ctitle>
+    Column Chart
+  </h4>
+  <div output>
+    <apx-chart [series]="columnChartOptions.series" [chart]="columnChartOptions.chart"
+      [xaxis]="columnChartOptions.xaxis" [yaxis]="columnChartOptions.yaxis" [grid]="columnChartOptions.grid"
+      [stroke]="columnChartOptions.stroke" [tooltip]="columnChartOptions.tooltip"
+      [plotOptions]="columnChartOptions.plotOptions" [dataLabels]="columnChartOptions.dataLabels"
+      [legend]="columnChartOptions.legend" [colors]="columnChartOptions.colors" [markers]="columnChartOptions.markers">
+    </apx-chart>
+  </div>
+  <!-- html view -->
+  <div htmlView>
+    <pre>
+      <code [highlight]="codeForColumnChart"
+            language="html"
+            lineNumbers></code>
+    </pre>
+  </div>
+  <!-- typescript view -->
+  <div tsView>
+    <pre>
+      <code [highlightAuto]="codeForColumnChartTs"   language="ts"
+            lineNumbers></code>
+    </pre>
+  </div>
+</app-code-view>

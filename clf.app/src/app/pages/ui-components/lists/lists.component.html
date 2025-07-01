@@ -1,0 +1,309 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Lists</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- basic -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-list role="list">
+              <mat-list-item role="listitem">Item 1</mat-list-item>
+              <mat-list-item role="listitem">Item 2</mat-list-item>
+              <mat-list-item role="listitem">Item 3</mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForBasicList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForBasicListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Two Line
+          </h4>
+          <div output>
+            <mat-list>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span matListItemLine class="f-s-14">Second line</span>
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span matListItemLine class="f-s-14">Second line</span>
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTwolineList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTwolineListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Three Line
+          </h4>
+          <div output>
+            <mat-list>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span matListItemLine class="f-s-14">Second line</span>
+                <span matListItemLine class="f-s-14">Third line</span>
+              </mat-list-item>
+              <mat-list-item>
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span matListItemLine class="f-s-14">Second line. This line will truncate.</span>
+                <span class="f-s-14">Third line</span>
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForThreelineList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForThreelineListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- two line -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Three Line with Text wrapping
+          </h4>
+          <div output>
+            <mat-list style="max-width: 500px">
+              <mat-list-item lines="3">
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span class="f-s-14">Secondary line that will wrap because the list lines is
+                  explicitly set to 3 lines. Text inside of a `matListItemTitle`
+                  or `matListItemLine` will never wrap.
+                </span>
+              </mat-list-item>
+              <mat-list-item lines="3" class="f-s-14">
+                <span matListItemTitle class="f-s-16 f-w-600">Title</span>
+                <span class="f-s-14">Secondary line that will wrap because the list lines is
+                  explicitly set to 3 lines. Text inside of a `matListItemTitle`
+                  or `matListItemLine` will never wrap.
+                </span>
+              </mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForThreelineList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForThreelineListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- List with Selection -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            List with Selection
+          </h4>
+          <div output>
+            <mat-selection-list #shoes>
+              @for(shoe of typesOfShoes; track shoe) {
+              <mat-list-option>
+                {{ shoe }}
+              </mat-list-option>
+              }
+            </mat-selection-list>
+
+            <p class="f-s-14 f-w-600 p-16 bg-light-primary rounded">
+              Options selected: {{ shoes.selectedOptions.selected.length }}
+            </p>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSelectionList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSelectionListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- --------------------------------------------------- -->
+        <!-- List with single Selection -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            List with single Selection
+          </h4>
+          <div output>
+            <mat-selection-list #shoes2 [multiple]="false">
+              @for(shoe of typesOfShoes; track shoe) {
+              <mat-list-option [value]="shoe">
+                {{ shoe }}
+              </mat-list-option>
+              }
+            </mat-selection-list>
+
+            <p class="f-s-14 f-w-600 p-16 bg-light-primary rounded">
+              Option selected:
+              {{
+              shoes2.selectedOptions.hasValue()
+              ? shoes2.selectedOptions.selected[0].value
+              : "None"
+              }}
+            </p>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSingleSelectionList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSingleSelectionListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-12">
+        <!-- --------------------------------------------------- -->
+        <!-- List with sections -->
+        <!-- --------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            List with sections
+          </h4>
+          <div output>
+            <mat-list>
+              <div mat-subheader class="f-s-16 m-b-16 f-w-600">Folders</div>
+              @for(folder of folders; track folder.name) {
+              <mat-list-item>
+                <mat-icon matListItemIcon>folder</mat-icon>
+                <div matListItemTitle class="f-s-16 f-w-600">
+                  {{ folder.name }}
+                </div>
+                <div matListItemLine class="f-s-14">
+                  {{ folder.updated | date }}
+                </div>
+              </mat-list-item>
+              }
+
+              <mat-divider></mat-divider>
+              <div mat-subheader class="f-s-16 m-y-16 f-w-600">Notes</div>
+              @for(note of notes; track note.name) {
+              <mat-list-item>
+                <mat-icon matListItemIcon>note</mat-icon>
+                <div matListItemTitle class="f-s-16 f-w-600">
+                  {{ note.name }}
+                </div>
+                <div matListItemLine class="f-s-14">
+                  {{ note.updated | date }}
+                </div>
+              </mat-list-item>
+              }
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSectionsList"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSectionsListTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

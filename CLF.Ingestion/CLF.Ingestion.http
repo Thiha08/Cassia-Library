@@ -1,0 +1,6 @@
+@CLF.Ingestion_HostAddress = http://localhost:5127
+
+GET {{CLF.Ingestion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

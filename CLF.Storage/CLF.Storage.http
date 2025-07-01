@@ -1,0 +1,6 @@
+@CLF.Storage_HostAddress = http://localhost:5148
+
+GET {{CLF.Storage_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

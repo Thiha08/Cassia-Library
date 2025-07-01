@@ -1,0 +1,6 @@
+@CLF.Gateway_HostAddress = http://localhost:5156
+
+GET {{CLF.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

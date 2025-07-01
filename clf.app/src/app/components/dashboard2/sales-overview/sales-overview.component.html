@@ -1,0 +1,49 @@
+<mat-card class="cardWithShadow">
+  <mat-card-header>
+    <mat-card-title>Sales Overview</mat-card-title>
+    <mat-card-subtitle class="f-s-14 f-w-400">Every month </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- ---------------------------- -->
+    <!-- charts here -->
+    <!-- ---------------------------- -->
+    <apx-chart
+      [series]="salesoverviewChart.series"
+      [plotOptions]="salesoverviewChart.plotOptions"
+      [dataLabels]="salesoverviewChart.dataLabels"
+      [chart]="salesoverviewChart.chart"
+      [legend]="salesoverviewChart.legend"
+      [colors]="salesoverviewChart.colors"
+      [tooltip]="salesoverviewChart.tooltip"
+      [labels]="salesoverviewChart.labels"
+      [stroke]="salesoverviewChart.stroke"
+    ></apx-chart>
+
+    <div class="d-flex align-items-center justify-content-between m-t-30">
+      <div class="d-flex align-items-center">
+        <span
+          class="text-primary bg-light-primary rounded icon-40 d-flex align-items-center justify-content-center"
+        >
+          <i-tabler name="grid-dots" class="icon-20 d-flex"></i-tabler>
+        </span>
+
+        <div class="m-l-12">
+          <h5 class="f-s-16 f-w-600 m-t-4">$23,450</h5>
+          <span class="f-s-14">Profit</span>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <span
+          class="text-secondary bg-light-secondary rounded icon-40 d-flex align-items-center justify-content-center"
+        >
+          <i-tabler name="grid-dots" class="icon-20 d-flex"></i-tabler>
+        </span>
+
+        <div class="m-l-12">
+          <h5 class="f-s-16 f-w-600 m-t-4">$23,450</h5>
+          <span class="f-s-14">Expance</span>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

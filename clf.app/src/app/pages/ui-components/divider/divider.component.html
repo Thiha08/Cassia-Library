@@ -1,0 +1,106 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Divider</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-list>
+              <mat-list-item>Item 1</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Item 2</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item>Item 3</mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForDividerBasic"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForDividerBasicTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Inset
+          </h4>
+          <div output>
+            <mat-list>
+              <mat-list-item>Home</mat-list-item>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-list-item>UI</mat-list-item>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-list-item>Forms</mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForDividerInset"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForDividerInsetTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Vertical
+          </h4>
+          <div output>
+            <mat-list class="d-flex">
+              <mat-list-item>Home</mat-list-item>
+              <mat-divider [vertical]="true"></mat-divider>
+              <mat-list-item>UI</mat-list-item>
+              <mat-divider [vertical]="true"></mat-divider>
+              <mat-list-item>Forms</mat-list-item>
+            </mat-list>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForDividerVertical"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForDividerVerticalTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

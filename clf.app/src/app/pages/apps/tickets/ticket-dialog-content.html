@@ -1,0 +1,132 @@
+@if(action !== 'Delete') {
+<mat-dialog-content class="mat-typography">
+  <div class="d-flex align-items-center justify-content-between m-b-16">
+    <h3>{{action}} Ticket</h3>
+    <button
+      mat-icon-button
+      mat-dialog-close
+      class="d-flex justify-content-center"
+    >
+      <i-tabler name="x" class="icon-20 d-flex"></i-tabler>
+    </button>
+  </div>
+  <form #userForm="ngForm">
+    <div class="row">
+      @if(action === 'Update') {
+      <div class="col-sm-6 col-lg-12">
+        <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Ticket Id</mat-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="id"
+            name="id"
+            [(ngModel)]="local_data.id"
+            placeholder="id"
+          />
+        </mat-form-field>
+      </div>
+      }
+
+      <div class="col-sm-6 col-lg-12">
+        <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Ticket Title</mat-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="title"
+            name="title"
+            [(ngModel)]="local_data.title"
+            placeholder="Ticker Title"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-lg-12">
+        <mat-label class="f-s-14 f-w-600 m-b-8 d-block"
+          >Ticket Subtext</mat-label
+        >
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="subtext"
+            name="subtext"
+            [(ngModel)]="local_data.subtext"
+            placeholder="Ticket Subtext"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-lg-12">
+        <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Assign User</mat-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-select
+            placeholder="Assign User"
+            [(ngModel)]="local_data.assignee"
+            name="assignee"
+            required
+          >
+            @for(user of users; track trackByUser) {
+            <mat-option [value]="user.name">
+              <div class="d-flex align-items-center gap-8">
+                <img
+                  [src]="user.photo"
+                  alt="{{ user.name }}"
+                  style="width: 24px; height: 24px; border-radius: 50%"
+                />
+                {{ user.name }}
+              </div>
+            </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      @if(action === 'Update'){
+      <div class="col-sm-6 col-lg-12">
+        <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Status</mat-label>
+        <mat-form-field appearance="outline" class="w-100">
+          <select
+            matNativeControl
+            required
+            name="status"
+            [(ngModel)]="local_data.status"
+          >
+            <option value="inprogress">In Progress</option>
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+          </select>
+        </mat-form-field>
+      </div>
+      } @if(action === 'Update') {
+      <div class="col-sm-6 col-lg-12">
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            [formControl]="dateControl"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      }
+    </div>
+  </form>
+</mat-dialog-content>
+} @else {
+<div class="p-x-24 p-b-24">
+  Sure to delete <span class="f-w-600">{{local_data.title}}</span>?
+</div>
+}
+<div mat-dialog-actions class="p-24 p-t-0">
+  <button mat-flat-button (click)="doAction()">{{action}}</button>
+  <button mat-flat-button class="bg-error text-white" (click)="closeDialog()">
+    Cancel
+  </button>
+</div>

@@ -1,0 +1,229 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Tooltips</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <button mat-flat-button color="primary" matTooltip="Info about the action">
+              Button
+            </button>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsBasic"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsBasicTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Uppercase
+          </h4>
+          <div output>
+            <button mat-flat-button color="primary" matTooltip="Info about the action" matTooltipClass="text-uppercase">
+              Button
+            </button>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsUppercase"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsUppercaseTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Disabled on click
+          </h4>
+          <div output>
+            <button mat-flat-button color="primary" matTooltip="Info about the action"
+              [matTooltipDisabled]="disabled.value" class="m-r-8">
+              Action
+            </button>
+
+            <mat-checkbox [formControl]="disabled" class="example-disabled-checkbox">
+              Tooltip disabled
+            </mat-checkbox>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsDisabledClick"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsDisabledClickTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Position
+          </h4>
+          <div output>
+            <button mat-flat-button color="primary" #tooltip="matTooltip" matTooltip="Info about the action"
+              matTooltipPosition="below" matTooltipHideDelay="100000">
+              Below
+            </button>
+            <button mat-flat-button color="accent" #tooltip="matTooltip" matTooltip="Info about the action"
+              matTooltipPosition="above" class="m-l-8" matTooltipHideDelay="100000">
+              Above
+            </button>
+            <button mat-flat-button color="warn" #tooltip="matTooltip" matTooltip="Info about the action"
+              matTooltipPosition="left" class="m-l-8" matTooltipHideDelay="100000">
+              Left
+            </button>
+            <button mat-flat-button color="primary" #tooltip="matTooltip" matTooltip="Info about the action"
+              matTooltipPosition="right" class="m-l-8" matTooltipHideDelay="100000">
+              Right
+            </button>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsPosition"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsPositionTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Show and Hide
+          </h4>
+          <div output>
+            <div class="row">
+              <div class="col-sm-4">
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Show delay</mat-label>
+                  <input matInput type="number" [formControl]="showDelay" />
+                  <mat-hint>milliseconds</mat-hint>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Hide delay</mat-label>
+                  <input matInput type="number" [formControl]="hideDelay2" />
+                  <mat-hint>milliseconds</mat-hint>
+                </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                <button mat-flat-button color="primary" matTooltip="Info about the action"
+                  [matTooltipShowDelay]="showDelay.value" [matTooltipHideDelay]="hideDelay2.value">
+                  Action
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsShowAndHide"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsShowAndHideTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Change Message
+          </h4>
+          <div output>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Tooltip message</mat-label>
+              <input matInput [formControl]="message" />
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" [matTooltip]="message.value || ''"
+              aria-label="Button that displays a tooltip with a custom message">
+              Action
+            </button>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTooltipsChangeMessage"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTooltipsChangeMessageTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,7 @@
+@use "../variables" as *;
+
+html .topbar.footerbar {
+  top: unset;
+  bottom: 0;
+  position: fixed;
+}

@@ -1,0 +1,28 @@
+<app-code-view [isTitle]="true">
+  <!-- output view -->
+  <h4 Ctitle>
+    Line Chart
+  </h4>
+  <div output>
+    <apx-chart [series]="lineChartOptions.series" [chart]="lineChartOptions.chart" [xaxis]="lineChartOptions.xaxis"
+      [yaxis]="lineChartOptions.yaxis" [grid]="lineChartOptions.grid" [stroke]="lineChartOptions.stroke"
+      [tooltip]="lineChartOptions.tooltip" [dataLabels]="lineChartOptions.dataLabels" [legend]="lineChartOptions.legend"
+      [colors]="lineChartOptions.colors" [markers]="lineChartOptions.markers">
+    </apx-chart>
+  </div>
+  <!-- html view -->
+  <div htmlView>
+    <pre>
+      <code [highlight]="codeForLineChart"
+            language="html"
+            lineNumbers></code>
+    </pre>
+  </div>
+  <!-- typescript view -->
+  <div tsView>
+    <pre>
+      <code [highlightAuto]="codeForLineChartTs"   language="ts"
+            lineNumbers></code>
+    </pre>
+  </div>
+</app-code-view>

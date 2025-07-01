@@ -1,0 +1,28 @@
+<app-code-view [isTitle]="true">
+  <!-- output view -->
+  <h4 Ctitle>
+    Area Chart
+  </h4>
+  <div output>
+    <apx-chart [series]="areaChartOptions.series" [chart]="areaChartOptions.chart" [xaxis]="areaChartOptions.xaxis"
+      [yaxis]="areaChartOptions.yaxis" [grid]="areaChartOptions.grid" [stroke]="areaChartOptions.stroke"
+      [tooltip]="areaChartOptions.tooltip" [dataLabels]="areaChartOptions.dataLabels" [legend]="areaChartOptions.legend"
+      [colors]="areaChartOptions.colors" [markers]="areaChartOptions.markers">
+    </apx-chart>
+  </div>
+  <!-- html view -->
+  <div htmlView>
+    <pre>
+      <code [highlight]="codeForAreaChart"
+            language="html"
+            lineNumbers></code>
+    </pre>
+  </div>
+  <!-- typescript view -->
+  <div tsView>
+    <pre>
+      <code [highlightAuto]="codeForAreaChartTs"   language="ts"
+            lineNumbers></code>
+    </pre>
+  </div>
+</app-code-view>

@@ -1,0 +1,89 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Progress Spinner</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Basic
+      </h4>
+      <div output>
+        <mat-spinner></mat-spinner>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForProgressSpinnerBasic"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForProgressSpinnerBasicTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Configurable
+      </h4>
+      <div output>
+        <h2 class="f-w-600 m-b-16 example-h2">Progress spinner configuration</h2>
+
+        <section class="example-section">
+          <label class="example-margin">Mode:</label>
+          <mat-radio-group [(ngModel)]="mode">
+            <mat-radio-button class="example-margin" value="determinate">
+              Determinate
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="indeterminate">
+              Indeterminate
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        @if (mode === 'determinate') {
+          <section class="example-section">
+            <label class="example-margin">Progress:</label>
+            <mat-slider class="example-margin">
+              <input type="range" [(ngModel)]="value" matSliderThumb>
+            </mat-slider>
+          </section>
+        }
+
+        <div class="p-24 rounded bg-light-primary m-t-16">
+          <h2 class="f-s-16 f-w-600 m-b-16 example-h2">Result</h2>
+
+          <mat-progress-spinner
+              class="example-margin"
+              [mode]="mode"
+              [value]="value">
+          </mat-progress-spinner>
+        </div>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForProgressSpinnerConfigurable"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForProgressSpinnerConfigurableTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+  </mat-card-content>
+</mat-card>

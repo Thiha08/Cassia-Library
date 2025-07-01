@@ -1,0 +1,32 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Paginator</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Basic
+      </h4>
+      <div output>
+        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+        </mat-paginator>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForPaginatorBasic"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForPaginatorBasicTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+  </mat-card-content>
+</mat-card>

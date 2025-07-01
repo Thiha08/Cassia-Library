@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2191419">
+  <PropertyGroup>
+    <StartupCommand>npm start</StartupCommand>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+    <!-- Allows the build (or compile) script located on package.json to run on Build -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\clf.client\</BuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\app\components\mapboards\city-maplayer\" />
+    <Folder Include="src\app\components\mapboards\earth-maplayer\" />
+    <Folder Include="src\app\components\mapboards\fire-maplayer\" />
+    <Folder Include="src\app\components\mapboards\event-maplayer\" />
+    <Folder Include="src\app\components\mapboards\infrastructure-maplayer\" />
+    <Folder Include="src\app\components\mapboards\NewFolder\" />
+    <Folder Include="src\app\components\mapboards\timeline-control\" />
+    <Folder Include="src\app\components\mapboards\wind-maplayer\" />
+    <Folder Include="src\app\components\mapboards\water-maplayer\" />
+    <Folder Include="src\assets\geojson\earthquake\" />
+    <Folder Include="src\assets\fonts\" />
+  </ItemGroup>
+</Project>

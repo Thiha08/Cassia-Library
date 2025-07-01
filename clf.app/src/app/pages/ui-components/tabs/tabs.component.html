@@ -1,0 +1,953 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Tabs</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsBasic"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsBasicTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Center Align
+          </h4>
+          <div output>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsCenterAlign"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsCenterAlignTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Right Align
+          </h4>
+          <div output>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsRightAlign"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsRightAlignTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            No Animation
+          </h4>
+          <div output>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms">
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsNoAnimation"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsNoAnimationTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Slow Animation
+          </h4>
+          <div output>
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="2000ms">
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsSlowAnimation"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsSlowAnimationTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Tab Group
+          </h4>
+          <div output>
+            <mat-tab-group>
+              <mat-tab label="Item One">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsGroup"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsGroupTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Cusom Label
+          </h4>
+          <div output>
+            <mat-tab-group>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item One
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Two
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Three
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsCusomLabel"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsCusomLabelTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Icon
+          </h4>
+          <div output>
+            <mat-tab-group>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsIcon"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsIconTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Position
+          </h4>
+          <div output>
+            <mat-tab-group headerPosition="below">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item One
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Two
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Three
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsPosition"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsPositionTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Position with Icons
+          </h4>
+          <div output>
+            <mat-tab-group headerPosition="below">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 3
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="file-description" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 4
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="archive" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-b-12">
+                  Content 5
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsPositionWithIcon"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsPositionWithIconTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Background
+          </h4>
+          <div output>
+            <mat-tab-group backgroundColor="primary">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item One
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Two
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Three
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsBackground"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsBackgroundTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Fit to Bar Content
+          </h4>
+          <div output>
+            <mat-tab-group fitInkBarToContent>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="file-description" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 4
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="archive" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 5
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsFitToBarContent"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsFitToBarContentTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Tab Content loaded lazily
+          </h4>
+          <div output>
+            <mat-tab-group>
+              <mat-tab label="Item One">
+                <ng-template matTabContent>
+                  <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                    Content 1 - Loaded: {{ getTimeLoaded(1) | date : "medium" }}
+                  </div>
+                </ng-template>
+              </mat-tab>
+              <mat-tab label="Item Two">
+                <ng-template matTabContent>
+                  <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                    Content 2 - Loaded: {{ getTimeLoaded(2) | date : "medium" }}
+                  </div>
+                </ng-template>
+              </mat-tab>
+              <mat-tab label="Item Three">
+                <ng-template matTabContent>
+                  <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                    Content 3 - Loaded: {{ getTimeLoaded(3) | date : "medium" }}
+                  </div>
+                </ng-template>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsContentLoadedLazily"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsContentLoadedLazilyTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Paginated tabs
+          </h4>
+          <div output>
+            <mat-tab-group>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item One
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 1
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Two
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 2
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Three
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 3
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Four
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 4
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Five
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 5
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Six
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 6
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="phone" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Seven
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 7
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="heart" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Eight
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 8
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="d-flex align-items-center">
+                    <mat-icon>
+                      <i-tabler name="user" class="icon-20 m-r-8"></i-tabler>
+                    </mat-icon>
+                  </div>
+                  Item Nine
+                </ng-template>
+                <div class="bg-light-primary f-s-14 p-16 rounded m-t-12">
+                  Content 9
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsPaginated"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsPaginatedTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Tab Navbar Background
+          </h4>
+          <div output>
+            <nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
+              @for(link of links; track link) {
+              <a mat-tab-link (click)="activeLink = link" [active]="activeLink == link">
+                {{ link }}
+              </a>
+              }
+
+              <a mat-tab-link disabled>Disabled Link</a>
+            </nav>
+            <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+            <div class="m-t-12">
+              <button mat-flat-button color="primary" (click)="toggleBackground()">
+                Toggle background
+              </button>
+              <button mat-flat-button color="accent" (click)="addLink()" class="m-l-8">
+                Add link
+              </button>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForTabsNavbarBackground"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForTabsNavbarBackgroundTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

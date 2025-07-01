@@ -1,0 +1,127 @@
+@CLF.Server_HostAddress = http://localhost:5113
+
+GET {{CLF.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Fire Events API Tests
+
+### 1. Get townships with active fire events today
+GET https://localhost:7001/api/fire-events/townships/active-today
+Accept: application/json
+
+### 2. Get fire events for a single township
+GET https://localhost:7001/api/fire-events/township/Springfield
+Accept: application/json
+
+### 3. Get fire events for a single township with filters
+GET https://localhost:7001/api/fire-events/township/Springfield?fromDate=2024-01-01&status=active&minIntensity=5
+Accept: application/json
+
+### 4. Get fire events for multiple townships
+GET https://localhost:7001/api/fire-events/townships?townships=Springfield,Riverside,Oakland
+Accept: application/json
+
+### 5. Get fire events by bounding box
+GET https://localhost:7001/api/fire-events/bbox?minLon=-120&minLat=25&maxLon=-60&maxLat=55
+Accept: application/json
+
+### 6. Get fire events by bounding box with filters
+GET https://localhost:7001/api/fire-events/bbox?minLon=-120&minLat=25&maxLon=-60&maxLat=55&status=active&minIntensity=3
+Accept: application/json
+
+### 7. Get township summary
+GET https://localhost:7001/api/fire-events/township/Springfield/summary
+Accept: application/json
+
+### 8. Health check
+GET https://localhost:7001/api/fire-events/health
+Accept: application/json
+
+### 9. Add a new fire event
+POST https://localhost:7001/api/fire-events/township/Springfield
+Content-Type: application/json
+
+{
+  "id": "fire-test-123",
+  "type": "Feature",
+  "township": "Springfield",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-118.2437, 34.0522]
+  },
+  "properties": {
+    "name": "Test Fire Event",
+    "description": "A test fire event for API testing",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "intensity": 6.5,
+    "status": "active",
+    "temperature": 28.5,
+    "humidity": 45.2,
+    "windSpeed": 12.3,
+    "windDirection": "NW",
+    "weatherCondition": "Clear",
+    "fireType": "Wildfire",
+    "areaAffected": 150.5,
+    "severity": "Medium",
+    "source": "Satellite",
+    "confidence": "High",
+    "satellite": "GOES-16",
+    "algorithm": "VIIRS",
+    "brightness": 350.2,
+    "frp": 75.8,
+    "dayNight": "D",
+    "country": "USA",
+    "state": "California",
+    "county": "Los Angeles",
+    "city": "Springfield",
+    "riskLevel": "Medium"
+  },
+  "source": "API"
+}
+
+### 10. Update an existing fire event
+PUT https://localhost:7001/api/fire-events/township/Springfield/event/fire-test-123
+Content-Type: application/json
+
+{
+  "id": "fire-test-123",
+  "type": "Feature",
+  "township": "Springfield",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-118.2437, 34.0522]
+  },
+  "properties": {
+    "name": "Updated Test Fire Event",
+    "description": "An updated test fire event",
+    "timestamp": "2024-01-15T11:30:00Z",
+    "intensity": 7.2,
+    "status": "contained",
+    "temperature": 30.1,
+    "humidity": 42.8,
+    "windSpeed": 15.6,
+    "windDirection": "NW",
+    "weatherCondition": "Clear",
+    "fireType": "Wildfire",
+    "areaAffected": 180.3,
+    "severity": "High",
+    "source": "Satellite",
+    "confidence": "High",
+    "satellite": "GOES-16",
+    "algorithm": "VIIRS",
+    "brightness": 380.5,
+    "frp": 85.2,
+    "dayNight": "D",
+    "country": "USA",
+    "state": "California",
+    "county": "Los Angeles",
+    "city": "Springfield",
+    "riskLevel": "High"
+  },
+  "source": "API"
+}
+
+### 11. Remove a fire event
+DELETE https://localhost:7001/api/fire-events/township/Springfield/event/fire-test-123

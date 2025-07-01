@@ -1,0 +1,87 @@
+<!-- Map Container -->
+<div #mapElement class="map-container"></div>
+
+<!-- Marker Overlay -->
+<div #markerElement id="marker" class="marker"></div>
+
+<!-- Vienna Label Overlay -->
+<div #viennaElement id="vienna" class="vienna-label">Vienna</div>
+
+<!-- Popup overlay element -->
+<div id="popup" #popupContainer class="ol-popup">
+  <!--<a href="#" id="popup-closer" #popupCloser class="ol-popup-closer"></a>-->
+  <div id="popup-content" #popupContent class="ol-popup-content">
+    <mat-card class="cardWithShadow map-popup-content">
+      <mat-card-content>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <span class="text-primary bg-light-primary rounded icon-40 d-flex align-items-center justify-content-center">
+              <i-tabler name="grid-dots" class="icon-20 d-flex"></i-tabler>
+            </span>
+
+            <div class="m-l-12">
+              <h5 class="f-s-16 f-w-600 m-t-4">$23,450</h5>
+              <span class="f-s-14">Profit</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="text-secondary bg-light-secondary rounded icon-40 d-flex align-items-center justify-content-center">
+              <i-tabler name="grid-dots" class="icon-20 d-flex"></i-tabler>
+            </span>
+
+            <div class="m-l-12">
+              <h5 class="f-s-16 f-w-600 m-t-4">$23,450</h5>
+              <span class="f-s-14">Expance</span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<mat-card class="cardWithShadow timelineControl"
+          [@slidePanel]="showTimeline ? 'visible' : 'hidden'"
+          [class.visible]="showTimeline"
+          [class.hidden]="!showTimeline">
+  <mat-card-content>
+    <div class="timeline m-t-24">
+      @for(stat of stats; track stat.title) {
+      <div class="timeline-item d-flex overflow-hidden">
+        <div class="point d-flex align-items-center">
+          <span class="timeline-badge border-{{ stat.color }} m-y-8"></span>
+          <span class="timline-border d-block"></span>
+        </div>
+        <div class="date">
+          <span class="f-s-12 f-w-600 d-block">{{ stat.time }}</span>
+        </div>
+      </div>
+      }
+
+    </div>
+  </mat-card-content>
+
+</mat-card>
+
+<div class="new-summary">
+  <span class="f-s-12 m-y-16 f-w-600 bg-white rounded-pill p-x-8 m-r-16">2 mins Read</span>
+</div>
+
+<div class="info-box" #infoElement>&nbsp;</div>
+
+<!--<mat-card *ngIf="selectedCity" class="city‑info">
+  <mat-card-title>{{ selectedCity.name }}</mat-card-title>-->
+<!--<mat-card-content>
+  Population: {{ selectedCity.population | number }}<br>
+  Region: {{ selectedCity.region }}-->
+<!-- etc. -->
+<!--</mat-card-content>-->
+<!--</mat-card>-->
+<!-- Static overlay for selected feature details -->
+<!--<div id="staticOverlay" class="static-overlay">
+  <div #staticOverlayContent id="staticOverlayContent">
+     Content will be updated on feature selection
+    <p>Select a feature</p>
+  </div>
+</div>-->

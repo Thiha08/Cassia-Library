@@ -1,0 +1,123 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Toolbar</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Basic
+      </h4>
+      <div output>
+        <mat-toolbar>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>
+              <i-tabler name="align-left" class="icon-20"></i-tabler>
+            </mat-icon>
+          </button>
+          <span>My App</span>
+          <span class="m-l-auto"></span>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>
+              <i-tabler name="heart-filled" class="icon-20"></i-tabler>
+            </mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>
+              <i-tabler name="share" class="icon-20"></i-tabler>
+            </mat-icon>
+          </button>
+        </mat-toolbar>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForToolbarBasic"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForToolbarBasicTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Multi Row
+      </h4>
+      <div output>
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span>Custom Toolbar</span>
+          </mat-toolbar-row>
+
+          <mat-toolbar-row>
+            <span>Second Line</span>
+            <span class="m-l-auto"></span>
+            <mat-icon class="example-icon" aria-hidden="false"
+              aria-label="Example user verified icon">verified_user</mat-icon>
+          </mat-toolbar-row>
+
+          <mat-toolbar-row>
+            <span>Third Line</span>
+            <span class="m-l-auto"></span>
+            <div class="d-flex gap-8 align-items-center">
+              <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+              <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForToolbarMultiRow"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForToolbarMultiRowTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Only Brand
+      </h4>
+      <div output>
+        <mat-toolbar>
+          <span>Modernize</span>
+        </mat-toolbar>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForToolbarOnlyBrand"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForToolbarOnlyBrandTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+    
+  </mat-card-content>
+</mat-card>

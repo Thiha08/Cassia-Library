@@ -1,0 +1,239 @@
+<div class="w-100 position-relative">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- If contact is selected -->
+  <!-- ------------------------------------------------------------------ -->
+  @if( selectedContact()) {
+  <div class="d-flex align-items-center justify-content-between p-x-24 p-y-16">
+    <h5 class="f-w-600 f-s-18">Contact Details</h5>
+
+    <!-- contact actions -->
+    <div class="d-flex align-items-center">
+      <button
+        class="d-flex align-items-center justify-content-center"
+        [matTooltip]="contact()?.starred ? 'Unstar' : 'Star'"
+        mat-icon-button
+        (click)="toggleStarred(contact(), $event)"
+      >
+        @if(contact()?.starred){
+        <i-tabler
+          name="star"
+          class="icon-18 d-flex align-items-center fill-warning"
+        ></i-tabler>
+        } @else {
+        <i-tabler
+          name="star"
+          class="icon-18 d-flex align-items-center"
+        ></i-tabler>
+        }
+      </button>
+      <button
+        class="d-flex align-items-center justify-content-center"
+        [matTooltip]="isEditing() ? 'Save' : 'Edit'"
+        mat-icon-button
+        (click)="isEditing() ? saveContact() : editContact()"
+      >
+        <i-tabler
+          [name]="isEditing() ? 'device-floppy' : 'pencil'"
+          class="icon-18 d-flex align-items-center"
+        ></i-tabler>
+      </button>
+      <button
+        class="d-flex align-items-center justify-content-center"
+        mat-icon-button
+        (click)="deleteContact(contact())"
+        matTooltip="Delete"
+      >
+        <i-tabler
+          name="trash"
+          class="icon-18 d-flex align-items-center"
+        ></i-tabler>
+      </button>
+    </div>
+  </div>
+  }
+
+  <mat-divider></mat-divider>
+
+  <!-- ------------------------------------------------------------------ -->
+  <!--  Contact in List View  -->
+  <!-- ------------------------------------------------------------------ -->
+  @if(selectedContact()) {
+  <ng-scrollbar class="position-relative" style="height: calc(100vh - 380px)">
+    @if(!isEditing() && contact()) {
+    <div class="p-24">
+      <div class="d-flex align-items-center gap-16">
+        <img
+          [src]="contact().image"
+          class="rounded-circle"
+          alt="userimg"
+          width="72px"
+          height="72px"
+        />
+        <div>
+          <h5 class="f-w-600 f-s-16">
+            {{ contact().firstname }}
+          </h5>
+          <span class="f-w-400 f-s-12">
+            {{ contact().department }}
+          </span>
+          <span class="f-w-400 f-s-12">
+            {{ contact().company }}
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 m-t-32">
+          <span class="f-s-12">Phone Number</span>
+          <h5 class="f-w-600 lh-sm f-s-14">
+            {{ contact().phone }}
+          </h5>
+        </div>
+        <div class="col-lg-6 m-t-32">
+          <span class="f-s-12">Email address</span>
+          <h5 class="f-w-600 lh-sm f-s-14">
+            {{ contact().email }}
+          </h5>
+        </div>
+        <div class="col-12 m-t-32">
+          <span class="f-s-12">Address</span>
+          <h5 class="f-w-600 lh-sm f-s-14">
+            {{ contact().address }}
+          </h5>
+        </div>
+        <div class="col-lg-6 m-t-32">
+          <span class="f-s-12">Department</span>
+          <h5 class="f-w-600 lh-sm f-s-14">
+            {{ contact().department }}
+          </h5>
+        </div>
+        <div class="col-lg-6 m-t-32">
+          <span class="f-s-12">Company</span>
+          <h5 class="f-w-600 lh-sm f-s-14">
+            {{ contact().company }}
+          </h5>
+        </div>
+        <div class="col-12 m-t-32">
+          <span class="f-s-12">Notes</span>
+          <h5 class="f-w-400 f-s-14">{{ contact().notes }}</h5>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="p-24 d-flex align-items-center gap-8">
+      <button mat-flat-button color="primary" (click)="editContact()">
+        Edit
+      </button>
+      <button
+        mat-flat-button
+        class="bg-error"
+        (click)="deleteContact(contact())"
+      >
+        Delete
+      </button>
+    </div>
+
+    }
+
+    <!-- ------------------------------------------------------------------ -->
+    <!--  Contact in Edit View  -->
+    <!-- ------------------------------------------------------------------ -->
+    @else {
+    <div class="p-24">
+      <div class="m-t-10">
+        <div>
+          <form (ngSubmit)="saveContact()">
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block"
+              >First Name</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100">
+              <input
+                matInput
+                [(ngModel)]="formData().firstname"
+                name="firstname"
+                required
+              />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block"
+              >Last Name</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100">
+              <input
+                matInput
+                [(ngModel)]="formData().lastname"
+                name="lastname"
+                required
+              />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Company</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <input
+                matInput
+                [(ngModel)]="formData().company"
+                name="company"
+                required
+              />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Phone</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <input
+                matInput
+                [(ngModel)]="formData().phone"
+                name="phone"
+                required
+              />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Email</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <input
+                matInput
+                [(ngModel)]="formData().email"
+                name="email"
+                required
+              />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Address</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <input matInput [(ngModel)]="formData().address" name="address" />
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block">Notes</mat-label>
+            <mat-form-field appearance="outline" class="w-100">
+              <textarea
+                matInput
+                [(ngModel)]="formData().notes"
+                name="notes"
+              ></textarea>
+            </mat-form-field>
+            <mat-label class="f-s-14 f-w-600 m-b-8 d-block"
+              >Department</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select
+                [(ngModel)]="formData().department"
+                name="department"
+                required
+              >
+                @for ( department of departments; track department) {
+                <mat-option [value]="department.name">
+                  {{ department.name }}
+                </mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <div class="m-t-8 d-flex align-items-center gap-8">
+              <button type="submit" mat-flat-button>Save Contact</button>
+              <button
+                mat-flat-button
+                class="bg-error text-white"
+                (click)="cancelEdit()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    }
+  </ng-scrollbar>
+  }
+</div>

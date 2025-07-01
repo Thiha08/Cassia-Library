@@ -1,0 +1,224 @@
+<mat-card class="cardWithShadow overflow-hidden position-relative">
+  <!-- ------------------------------------------------------ -->
+  <!-- Desktop App -->
+  <!-- ------------------------------------------------------ -->
+
+  <div class="bg-primary text-white p-10 d-block d-lg-none">
+    <!-- ------------------------------------------------------ -->
+    <!-- Toggle mobile -->
+    <!-- ------------------------------------------------------ -->
+    <button (click)="mailnav.toggle()" class="text-white" mat-icon-button>
+      <mat-icon>short_text</mat-icon>
+    </button>
+  </div>
+
+  <mat-sidenav-container class="email-box">
+    <!-- ------------------------------------------------------ -->
+    <!-- Sidebar contact -->
+    <!-- ------------------------------------------------------ -->
+    <mat-sidenav
+      #mailnav
+      [mode]="isOver() ? 'over' : 'side'"
+      [opened]="!isOver()"
+      class="mail-sidebar"
+    >
+      <div class="p-16">
+        <button
+          mat-flat-button
+          (click)="openAddContactDialog()"
+          color="primary"
+          class="w-100 btn-block"
+        >
+          Add New Contacts
+        </button>
+      </div>
+      <ng-scrollbar
+        style="height: calc(100vh - 380px)"
+        class="position-relative"
+      >
+        <div class="p-16">
+          <mat-nav-list>
+            @for(fil of contactService.filters();track fil.id) {
+            <mat-list-item
+              role="listitem"
+              [ngClass]="{
+                'bg-light-primary':
+                  fil.id === contactService.selectedFilter()?.id
+              }"
+              (click)="applyFilter(fil)"
+              class="m-b-2 gap-10"
+            >
+              <span matListItemIcon class="m-r-0">
+                <i-tabler name="{{ fil.icon }}" class="icon-18"></i-tabler>
+              </span>
+              <span matListItemTitle class="f-w-400 f-s-14">{{
+                fil.name
+              }}</span>
+            </mat-list-item>
+            }
+          </mat-nav-list>
+        </div>
+        <h5 class="m-0 p-t-16 p-x-32 f-s-14 f-w-600 b-t-1">Categories</h5>
+        <div class="p-16">
+          <mat-nav-list>
+            @for(lab of contactService.labels();track lab.id){
+            <mat-list-item
+              role="listitem"
+              [ngClass]="{
+                'bg-light-primary':
+                  lab.id === contactService.selectedCategory()?.id
+              }"
+              (click)="applyCategory(lab)"
+              class="m-b-2 gap-10"
+            >
+              <span matListItemIcon class="m-r-0">
+                <i-tabler
+                  name="{{ lab.icon }}"
+                  [style.color]="lab.color"
+                  class="icon-18"
+                ></i-tabler>
+              </span>
+              <span class="f-w-400 f-s-14" matListItemTitle>{{
+                lab.name
+              }}</span>
+            </mat-list-item>
+            }
+          </mat-nav-list>
+        </div>
+      </ng-scrollbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- ------------------------------------------------------ -->
+      <!-- contact Listing and Details-->
+      <!-- ------------------------------------------------------ -->
+      <div class="p-x-15 w-100 h-100">
+        <div class="row h-100">
+          <!-- ------------------------------------------------------ -->
+          <!-- Listing -->
+          <!-- ------------------------------------------------------ -->
+          <div class="col-md-4 b-r-1 p-0">
+            <div class="p-20 d-flex align-items-center">
+              <mat-form-field appearance="outline" class="w-100 hide-hint">
+                <input
+                  matInput
+                  placeholder="Search Contacts"
+                  [(ngModel)]="searchTerm"
+                  (ngModelChange)="searchTerm.set($event)"
+                />
+                <mat-icon matSuffix>
+                  <i-tabler
+                    name="search"
+                    class="icon-18 d-flex m-t-4"
+                  ></i-tabler>
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <ng-scrollbar
+              style="height: calc(100vh - 380px)"
+              class="position-relative"
+            >
+              @if(filteredContacts().length){
+              <div class="position-relative">
+                <mat-nav-list class="p-x-8 contact-listing">
+                  @for(contact of filteredContacts(); track contact.id ){
+
+                  <mat-list-item
+                    (click)="selectContact(contact)"
+                    class="gap-10 m-b-2"
+                    [ngClass]="{
+                      'bg-light-primary':
+                        contact.id === contactService.getSelectedContact()?.id
+                    }"
+                  >
+                    <span matListItemIcon>
+                      <img
+                        [src]="contact.image"
+                        alt="Contact Image"
+                        width="40px"
+                        height="40px"
+                        class="rounded-circle"
+                      />
+                    </span>
+                    <div
+                      class="d-flex align-items-center justify-content-between w-100"
+                      matListItemTitle
+                    >
+                      <h6 class="f-w-600 f-s-14 lh-sm">
+                        {{ contact.firstname }} {{ contact.lastname }}
+                      </h6>
+                      <div class="d-flex justify-content-center gap-8 m-l-auto">
+                        <!-- star icon -->
+                        <span
+                          class="d-flex align-items-center gap-8"
+                          (click)="toggleStarred(contact, $event)"
+                        >
+                          @if(contact.starred){
+                          <i-tabler
+                            name="star"
+                            class="icon-16 fill-warning"
+                          ></i-tabler>
+                          }@else{
+                          <i-tabler name="star" class="icon-16"></i-tabler>
+                          }
+                        </span>
+                        <!-- Delete Icon -->
+                        <i-tabler
+                          name="trash"
+                          class="icon-16 cursor-pointer"
+                          (click)="deleteContact(contact)"
+                        ></i-tabler>
+                      </div>
+                    </div>
+                    <p class="f-s-12 m-0" matListItemLine>
+                      {{ contact.department }}
+                    </p>
+                  </mat-list-item>
+                  }
+                </mat-nav-list>
+              </div>
+              } @else {
+              <div class="p-15 bg-light-primary text-primary rounded m-x-20 text-center">
+                <span class="f-s-14">No contacts found.</span>
+              </div>
+
+              }
+            </ng-scrollbar>
+          </div>
+
+          <!-- ------------------------------------------------------ -->
+          <!-- Details of contacts -->
+          <!-- ------------------------------------------------------ -->
+          <div
+            [ngClass]="{
+              'col-md-8 detail-part contact-detail-part p-0': true,
+              activeContact: isActiveContact
+            }"
+          >
+            @if(selectedContact() == null) {
+            <div class="h-100 welcome-app">
+              <div
+                class="d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div>
+                  <h3 class="f-s-21 f-w-600">Please Select a contact</h3>
+                  <img
+                    src="/assets/images/breadcrumb/emailSv.png"
+                    width="250px"
+                  />
+                </div>
+              </div>
+            </div>
+            } @else{
+            <div class="w-100">
+              <div class="p-x-24 p-y-16 d-md-none">
+                <button mat-stroked-button (click)="goBack()">Back</button>
+              </div>
+              <app-detail></app-detail>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</mat-card>

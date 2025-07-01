@@ -1,0 +1,262 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Chips</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- basic -->
+        <!-- ------------------------------------------------------------------------- -->
+
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-chip-listbox aria-label="Fish selection">
+              <mat-chip-option class="f-s-14" color="primary">One fish</mat-chip-option>
+              <mat-chip-option class="f-s-14">Two fish</mat-chip-option>
+              <mat-chip-option class="f-s-14" color="accent" selected>Accent fish</mat-chip-option>
+              <mat-chip-option class="f-s-14" color="warn">Warn fish</mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForBasicChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForBasicChipsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- avatar -->
+        <!-- ------------------------------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Avatar
+          </h4>
+          <div output>
+            <mat-chip-set aria-label="Dog selection">
+              <mat-chip class="f-s-14">
+                <img matChipAvatar src="/assets/images/profile/user-1.jpg" alt="Photo of a Shiba Inu" />
+                Anderson
+              </mat-chip>
+              <mat-chip class="f-s-14" color="primary">
+                <img matChipAvatar src="/assets/images/profile/user-2.jpg" alt="Photo of a Shiba Inu" />
+                Monty
+              </mat-chip>
+              <mat-chip class="f-s-14" color="accent">
+                <img matChipAvatar src="/assets/images/profile/user-3.jpg" alt="Photo of a Shiba Inu" />
+                Mathew
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForAvatarChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForAvatarChipsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- Drag n Drop -->
+        <!-- ------------------------------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Drag n Drop
+          </h4>
+          <div output>
+            <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+              (cdkDropListDropped)="drop($event)">
+              @for (vegetable of vegetables(); track vegetable.name) {
+              <mat-chip class="example-box" cdkDrag>{{
+                vegetable.name
+                }}</mat-chip>
+              }
+            </mat-chip-set>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForDragDropChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForDragDropChipsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- Stacked  -->
+        <!-- ------------------------------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <h4 Ctitle>
+            Stacked
+          </h4>
+          <!-- output view -->
+          <div output>
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
+              @for (dog of bestBoys; track dog) {
+                <mat-chip-option selected>{{dog}}</mat-chip-option>
+              }
+            </mat-chip-listbox>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForStackedChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForStackedChipsTs"   language="ts" 
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-12">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- Input -->
+        <!-- ------------------------------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Input
+          </h4>
+          <div output>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Favorite Fruits</mat-label>
+              <mat-chip-grid #chipGrid aria-label="Enter fruits">
+                @for(fruit of fruits; track fruit.name) {
+                <mat-chip-row (removed)="remove(fruit)" [editable]="true" (edited)="edit(fruit, $event)"
+                  [aria-description]="'press enter to edit ' + fruit.name" class="f-s-14">
+                  {{ fruit.name }}
+                  <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip-row>
+                }
+
+                <input placeholder="New fruit..." [matChipInputFor]="chipGrid"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="add($event)" />
+              </mat-chip-grid>
+            </mat-form-field>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForInputChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForInputChipsTs"   language="ts" 
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+
+      <div class="col-12">
+        <!-- ------------------------------------------------------------------------- -->
+        <!-- Form Control -->
+        <!-- ------------------------------------------------------------------------- -->
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Form Control
+          </h4>
+          <div output>
+            <div class="d-flex gap-8">
+              <button mat-stroked-button color="primary" (click)="formControl.disable()">
+                Disable form control
+              </button>
+              <button mat-raised-button color="primary" (click)="formControl.enable()">
+                Enable form control
+              </button>
+            </div>
+            <mat-form-field appearance="outline" class="w-100 m-t-20">
+              <mat-label>Video keywords</mat-label>
+              <mat-chip-grid #formChip aria-label="Enter keywords" [formControl]="formControl">
+                @for (keyword of keywords(); track keyword) {
+                <mat-chip-row (removed)="removeKeyword(keyword)">
+                  {{ keyword }}
+                  <button matChipRemove aria-label="'remove ' + keyword">
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip-row>
+                }
+              </mat-chip-grid>
+              <input placeholder="New keyword..." [matChipInputFor]="formChip"
+                (matChipInputTokenEnd)="addForm($event)" />
+            </mat-form-field>
+
+            <p>
+              <span class="f-w-600">The following keywords are entered:</span>
+              {{ formControl.value }}
+            </p>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForFormControlChips"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForFormControlChipsTs"   language="ts" 
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,269 @@
+.map-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.earthquake-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.map-popup-content {
+  margin-bottom: 0;
+}
+
+/* Popup overlay styling */
+/*.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 200px;
+}
+
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}*/
+/* Close button for the popup */
+/*.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+.ol-popup-closer:after {
+  content: "✖";
+}*/
+/* Popup styling similar to OpenLayers examples */
+.ol-popup {
+  position: absolute;
+  bottom: 12px;
+  left: -50px;
+  min-width: 280px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: var(--mdc-elevated-card-container-color, var(--mat-sys-surface-container-low));
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: var(--mdc-elevated-card-container-color, var(--mat-sys-surface-container-low));
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+.ol-popup-closer:after {
+  content: "✖";
+}
+
+/* Style for the static overlay – it sits over the map */
+.static-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1000; /* ensure it's above the map */
+  max-width: 300px;
+  font-size: 14px;
+}
+
+/* Timeline control styles */
+.timeline-control {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  width: 300px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  /* Position variants */
+  &.timeline-control-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: row;
+  }
+
+  &.timeline-control-right {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    height: 300px;
+    width: auto;
+
+    .timeline-slider {
+      transform: rotate(-90deg);
+      width: 260px;
+      margin: 115px 0;
+    }
+
+    .timeline-date-display {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.timeline-date-display {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+  min-width: 100px;
+}
+
+.timeline-slider {
+  flex: 1;
+  margin: 0 10px;
+  /* Custom slider styling */
+  -webkit-appearance: none;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #398bf7; /* Use your primary color */
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #398bf7;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.timeline-play-button {
+  background-color: #398bf7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    /*background-color: darken(#398bf7, 10%);*/
+  }
+}
+
+.timelineControl {
+  max-height: 100%;
+  position: fixed;
+  right: 0;
+  overflow-y: auto;
+
+  .mat-mdc-card-content {
+    padding: 60px 20px !important;
+  }
+}
+
+.timeline .timeline-item .date {
+  padding: 5px 5px;
+}
+
+/*.new-summary {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  height: auto;*/ /* Allow height to adjust to content */
+  /*z-index: 1000;*/ /* Ensure it's above other elements */
+  /*overflow: visible;*/ /* Let content flow naturally */
+/*}*/
+
+
+
+

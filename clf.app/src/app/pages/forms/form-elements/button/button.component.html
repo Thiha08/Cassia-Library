@@ -1,0 +1,502 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Buttons</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8">
+              <button mat-button>Basic</button>
+              <button mat-button disabled>Disabled</button>
+              <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForBasicButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForBasicButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Raised
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8">
+              <button mat-raised-button>Basic</button>
+              <button mat-raised-button disabled>Disabled</button>
+              <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForRaisedButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForRaisedButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Outlined
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8 flex-wrap">
+              <button mat-stroked-button>Primary</button>
+              <button mat-button class="b-1 border-secondary text-secondary">
+                Secondary
+              </button>
+              <button mat-button class="b-1 border-warning text-warning">
+                Warning
+              </button>
+              <button mat-button class="b-1 border-error text-error">
+                Error
+              </button>
+              <button mat-button class="b-1 border-success text-success">
+                Success
+              </button>
+              <button mat-button disabled>Disabled</button>
+              <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForOutlinedButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForOutlinedButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Flat
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8 flex-wrap">
+              <button mat-flat-button>Primary</button>
+              <button mat-flat-button class="bg-secondary text-white">Secondary</button>
+              <button mat-flat-button class="bg-warning text-white">Warning</button>
+              <button mat-flat-button class="bg-error text-white">Error</button>
+              <button mat-flat-button class="bg-success text-white">Success</button>
+              <button mat-flat-button disabled>Disabled</button>
+              <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForFlatButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForFlatButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Icon
+          </h4>
+          <div output>
+            <div class="d-flex gap-8 justify-content-center">
+              <button mat-icon-button class="d-flex" aria-label="Example icon button with a vertical three dot icon">
+                <i-tabler name="home-2" class="icon-20"></i-tabler>
+              </button>
+              <button mat-icon-button color="primary" class="d-flex" aria-label="Example icon button with a home icon">
+                <i-tabler name="adjustments-alt" class="icon-20"></i-tabler>
+              </button>
+              <button mat-icon-button color="accent" class="d-flex" aria-label="Example icon button with a menu icon">
+                <i-tabler name="apps" class="icon-20"></i-tabler>
+              </button>
+              <button mat-icon-button color="warn" class="d-flex" aria-label="Example icon button with a heart icon">
+                <i-tabler name="heart-filled" class="icon-20"></i-tabler>
+              </button>
+              <button mat-icon-button disabled class="d-flex"
+                aria-label="Example icon button with a open in new tab icon">
+                <i-tabler name="message-2" class="icon-20"></i-tabler>
+              </button>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForIconButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForIconButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Fab
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8">
+              <button mat-fab class="bg-primary text-white" aria-label="Example icon button with a delete icon">
+                <i-tabler name="trash"></i-tabler>
+              </button>
+
+              <button mat-fab class="bg-secondary text-white" aria-label="Example icon button with a bookmark icon">
+                <i-tabler name="bookmark"></i-tabler>
+              </button>
+
+              <button mat-fab class="bg-warning text-white" aria-label="Example icon button with a home icon">
+                <i-tabler name="home-2"></i-tabler>
+              </button>
+
+              <button mat-fab class="bg-error text-white" aria-label="Example icon button with a heart icon">
+                <i-tabler name="heart-filled"></i-tabler>
+              </button>
+
+              <button mat-fab class="bg-success text-white" aria-label="Example icon button with a heart icon">
+                <i-tabler name="access-point"></i-tabler>
+              </button>
+
+              <button mat-fab disabled aria-label="Example icon button with a heart icon">
+                <i-tabler name="accessible"></i-tabler>
+              </button>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForFabButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForFabButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Mini Fab
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8">
+              <button mat-mini-fab class="bg-primary text-white" aria-label="Example icon button with a delete icon">
+                <i-tabler class="icon-20 d-flex" name="trash"></i-tabler>
+              </button>
+
+              <button mat-mini-fab class="bg-secondary text-white"
+                aria-label="Example icon button with a bookmark icon">
+                <i-tabler class="icon-20 d-flex" name="bookmark"></i-tabler>
+              </button>
+
+              <button mat-mini-fab class="bg-warning text-white" aria-label="Example icon button with a home icon">
+                <i-tabler class="icon-20 d-flex" name="home-2"></i-tabler>
+              </button>
+
+              <button mat-mini-fab class="bg-error text-white" aria-label="Example icon button with a home icon">
+                <i-tabler class="icon-20 d-flex" name="access-point"></i-tabler>
+              </button>
+
+              <button mat-mini-fab class="bg-success text-white" aria-label="Example icon button with a home icon">
+                <i-tabler class="icon-20 d-flex" name="home-2"></i-tabler>
+              </button>
+
+              <button mat-mini-fab disabled aria-label="Example icon button with a heart icon">
+                <i-tabler class="icon-20 d-flex" name="accessible"></i-tabler>
+              </button>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForMiniFabButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForMiniFabButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-lg-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Extended Fab
+          </h4>
+          <div output>
+            <div class="d-flex flex-sm-row flex-col align-items-center justify-content-center gap-8">
+              <button mat-fab extended aria-label="Example icon button with a delete icon">
+                <div class="d-flex align-items-center">
+                  <i-tabler class="icon-20 m-r-4" name="trash"></i-tabler><span> Delete</span>
+                </div>
+              </button>
+
+              <button mat-fab extended aria-label="Example icon button with a bookmark icon">
+                <div class="d-flex align-items-center">
+                  <i-tabler class="icon-20 m-r-4" name="bookmark"></i-tabler>
+                  Bookmark
+                </div>
+              </button>
+
+              <button mat-fab extended aria-label="Example icon button with a home icon">
+                <div class="d-flex align-items-center">
+                  <i-tabler class="icon-20 m-r-4" name="home-2"></i-tabler> Home
+                </div>
+              </button>
+
+              <button mat-fab extended disabled aria-label="Example icon button with a heart icon">
+                <div class="d-flex align-items-center">
+                  <i-tabler class="icon-20 m-r-4" name="heart-filled"></i-tabler>
+                  Heart
+                </div>
+              </button>
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForExtendedFabButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForExtendedFabButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Button Toggle</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-sm-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="bold">Bold</mat-button-toggle>
+              <mat-button-toggle value="italic">Italic</mat-button-toggle>
+              <mat-button-toggle value="underline">Underline</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForBasicToggleButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForBasicToggleButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-sm-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Multiple Select
+          </h4>
+          <div output>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" multiple>
+              <mat-button-toggle value="flour">Flour</mat-button-toggle>
+              <mat-button-toggle value="eggs">Eggs</mat-button-toggle>
+              <mat-button-toggle value="sugar">Sugar</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForMultipleSelectToggleButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForMultipleSelectToggleButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-sm-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Reactive Form
+          </h4>
+          <div output>
+            <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+              <mat-button-toggle value="bold">Bold</mat-button-toggle>
+              <mat-button-toggle value="italic">Italic</mat-button-toggle>
+              <mat-button-toggle value="underline">Underline</mat-button-toggle>
+            </mat-button-toggle-group>
+            <p class="f-s-14 f-w-600 m-t-12">
+              Chosen value is : {{ fontStyleControl.value }}
+            </p>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForReactiveFormToggleButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForReactiveFormToggleButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+
+      <div class="col-sm-6">
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Exclusive selection
+          </h4>
+          <div output>
+            <mat-button-toggle-group #group="matButtonToggleGroup">
+              <mat-button-toggle value="left" aria-label="Text align left">
+                <mat-icon>format_align_left</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle value="center" aria-label="Text align center">
+                <mat-icon>format_align_center</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle value="right" aria-label="Text align right">
+                <mat-icon>format_align_right</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle value="justify" disabled aria-label="Text align justify">
+                <mat-icon>format_align_justify</mat-icon>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <div class="f-s-14 f-w-600 m-t-12">
+              Selected value: {{ group.value }}
+            </div>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForExclusiveSelectionToggleButtons"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForExclusiveSelectionToggleButtonsTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

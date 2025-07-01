@@ -1,0 +1,23 @@
+<mat-card class="b-1 shadow-none">
+  <div>
+    @if (isTitle) {
+    <div class="p-16 b-b-1">
+      <mat-card-title><ng-content select="[Ctitle]"></ng-content></mat-card-title>
+    </div>
+    }
+  </div>
+
+  <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false">
+    <mat-tab label="Preview">
+      <div class="p-16">
+        <ng-content select="[output]"></ng-content>
+      </div>
+    </mat-tab>
+    <mat-tab label="HTML">
+      <ng-content select="[htmlView]"></ng-content>
+    </mat-tab>
+    <mat-tab label="Typescript">
+      <ng-content select="[tsView]"></ng-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

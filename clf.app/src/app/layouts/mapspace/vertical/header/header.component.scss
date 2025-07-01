@@ -1,0 +1,24 @@
+/* Active‑layer icon colors */
+button[mat-icon-button].active-layer.air-layer i-tabler {
+  color: #74C9FF; /*Air	Knowledge, awakening, enlightenment	Sky Blue	*/
+}
+
+button[mat-icon-button].active-layer.water-layer i-tabler {
+  color: #3CD4B3; /*Water	Purity, clarity, life’s breath	Teal*/
+}
+
+button[mat-icon-button].active-layer.earth-layer i-tabler {
+  color: #FFD166; /*Earth	Wealth, beauty, solid foundation	Goldenrod*/
+}
+
+button[mat-icon-button].active-layer.fire-layer i-tabler {
+  color: #FF5E5B; /*Fire	Passion, energy, action	Coral*/
+}
+
+button[mat-icon-button].active-layer.war-layer i-tabler {
+  color: #D72638; /*War	Conflict, struggle, aggression	Crimson*/
+}
+
+/*button[mat-icon-button].active-layer.ai-layer i-tabler {
+  color: #9C27B0;*/ /*AI	Artificial Intelligence, technology, innovation	Purple*/
+/*}*/

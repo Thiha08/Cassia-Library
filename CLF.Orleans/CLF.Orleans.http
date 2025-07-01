@@ -1,0 +1,6 @@
+@CLF.Orleans_HostAddress = http://localhost:5029
+
+GET {{CLF.Orleans_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

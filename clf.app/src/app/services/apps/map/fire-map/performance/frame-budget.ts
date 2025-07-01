@@ -1,0 +1,1 @@
+// RAII-style animation controller

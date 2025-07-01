@@ -1,0 +1,174 @@
+<mat-card class="cardWithShadow theme-card">
+  <div class="p-24">
+    <mat-card-title class="m-b-0">Slider</mat-card-title>
+  </div>
+  <mat-card-content class="b-t-1">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Configuration
+      </h4>
+      <div output>
+        <div class="row">
+          <div class="col-lg-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Value</mat-label>
+              <input matInput type="number" [(ngModel)]="value" />
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Min value</mat-label>
+              <input matInput type="number" [(ngModel)]="min" />
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Max value</mat-label>
+              <input matInput type="number" [(ngModel)]="max" />
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Step size</mat-label>
+              <input matInput type="number" [(ngModel)]="step" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <section class="example-section">
+          <mat-checkbox [(ngModel)]="showTicks" color="primary">Show ticks</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox [(ngModel)]="thumbLabel" color="primary">Show thumb label</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox [(ngModel)]="disabled" color="primary">Disabled</mat-checkbox>
+        </section>
+
+        <div class="p-24 rounded bg-light-primary m-t-16">
+          <h2 class="f-s-16 f-w-600 m-b-16">Result</h2>
+
+          <div>
+            <label id="example-name-label" class="f-w-600 f-s-14">Value :
+            </label>
+            <label class="f-w-500 f-s-14">{{ value }}</label>
+          </div>
+          <mat-slider class="example-margin" [disabled]="disabled" [max]="max" [min]="min" [step]="step"
+            [discrete]="thumbLabel" [showTickMarks]="showTicks">
+            <input matSliderThumb [(ngModel)]="value" />
+          </mat-slider>
+        </div>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForSliderConfiguration"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForSliderConfigurationTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+    <div class="row">
+      <div class="col-lg-6">
+        
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Custom thumb label
+          </h4>
+          <div output>
+            <mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+              <input matSliderThumb />
+            </mat-slider>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSliderCustomThumbLabel"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSliderCustomThumbLabelTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+
+      </div>
+      <div class="col-lg-6">
+
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Basic
+          </h4>
+          <div output>
+            <mat-slider>
+              <input matSliderThumb />
+            </mat-slider>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSliderBasic"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSliderBasicTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+      <div class="col-lg-6">
+
+        <app-code-view [isTitle]="true">
+          <!-- output view -->
+          <h4 Ctitle>
+            Range slider
+          </h4>
+          <div output>
+            <mat-slider min="200" max="500">
+              <input value="300" matSliderStartThumb />
+              <input value="400" matSliderEndThumb />
+            </mat-slider>
+          </div>
+          <!-- html view -->
+          <div htmlView>
+            <pre>
+              <code [highlight]="codeForSliderRange"
+                    language="html"
+                    lineNumbers></code>
+            </pre>
+          </div>
+          <!-- typescript view -->
+          <div tsView>
+            <pre>
+              <code [highlightAuto]="codeForSliderRangeTs"   language="ts"
+                    lineNumbers></code>
+            </pre>
+          </div>
+        </app-code-view>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,1 @@
+// Smooth transitions between states

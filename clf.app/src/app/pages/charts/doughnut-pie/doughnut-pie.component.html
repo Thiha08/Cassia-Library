@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-lg-6">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Doughnut
+      </h4>
+      <div output>
+        <apx-chart [series]="doughnutChartOptions.series" [chart]="doughnutChartOptions.chart"
+          [dataLabels]="doughnutChartOptions.dataLabels" [plotOptions]="doughnutChartOptions.plotOptions"
+          [legend]="doughnutChartOptions.legend" [colors]="doughnutChartOptions.colors"
+          [tooltip]="doughnutChartOptions.tooltip">
+        </apx-chart>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForDoughnutChart"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForDoughnutChartTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+  </div>
+  <div class="col-lg-6">
+    <app-code-view [isTitle]="true">
+      <!-- output view -->
+      <h4 Ctitle>
+        Pie
+      </h4>
+      <div output>
+        <apx-chart [series]="doughnutChartOptions.series" [chart]="doughnutChartOptions.chart"
+          [dataLabels]="doughnutChartOptions.dataLabels" [plotOptions]="doughnutChartOptions.plotOptions"
+          [legend]="doughnutChartOptions.legend" [colors]="doughnutChartOptions.colors"
+          [tooltip]="doughnutChartOptions.tooltip">
+        </apx-chart>
+      </div>
+      <!-- html view -->
+      <div htmlView>
+        <pre>
+          <code [highlight]="codeForPieChart"
+                language="html"
+                lineNumbers></code>
+        </pre>
+      </div>
+      <!-- typescript view -->
+      <div tsView>
+        <pre>
+          <code [highlightAuto]="codeForPieChartTs"   language="ts"
+                lineNumbers></code>
+        </pre>
+      </div>
+    </app-code-view>
+
+  </div>
+</div>

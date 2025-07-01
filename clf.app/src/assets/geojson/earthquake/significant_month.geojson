@@ -1,0 +1,86 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1743744093000,
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+    "title": "USGS Significant Earthquakes, Past Month",
+    "status": 200,
+    "api": "1.14.1",
+    "count": 12
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.7,
+        "place": "Burma (Myanmar)",
+        "time": 1743143524726,
+        "updated": 1743634385825,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000pn9z",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us7000pn9z.geojson",
+        "felt": 104,
+        "cdi": 9.1,
+        "mmi": 8.03,
+        "alert": "orange",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1095,
+        "net": "us",
+        "code": "7000pn9z",
+        "ids": ",us7000pn9z,",
+        "sources": ",us,",
+        "types": ",dyfi,earthquake-name,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 106,
+        "dmin": 4.273,
+        "rms": 0.84,
+        "gap": 41,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.7 - Burma (Myanmar)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ 95.9692, 21.7073, 10 ]
+      },
+      "id": "us7000pn9z"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 7.7,
+        "place": "2025 Mandalay, Burma (Myanmar) Earthquake",
+        "time": 1743142852684,
+        "updated": 1743731112209,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000pn9s",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us7000pn9s.geojson",
+        "felt": 2289,
+        "cdi": 9.1,
+        "mmi": 9.171,
+        "alert": "red",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 2910,
+        "net": "us",
+        "code": "7000pn9s",
+        "ids": ",us7000pn9s,",
+        "sources": ",us,",
+        "types": ",dyfi,earthquake-name,finite-fault,general-text,ground-failure,losspager,moment-tensor,oaf,origin,phase-data,shakemap,",
+        "nst": 245,
+        "dmin": 3.481,
+        "rms": 0.9,
+        "gap": 24,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 7.7 - 2025 Mandalay, Burma (Myanmar) Earthquake"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ 95.9258, 21.9963, 10 ]
+      },
+      "id": "us7000pn9s"
+    }
+  ],
+  "bbox": [ -173.9074, -56.9291, 10, 165.933, 71.176, 29 ]
+}

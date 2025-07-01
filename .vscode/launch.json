@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Angular",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:50908",
+      "webRoot": "${workspaceFolder}/clf.app",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/src/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      },
+      "preLaunchTask": "npm: start",
+      "sourceMaps": true
+    }
+  ]
+} 
