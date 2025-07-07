@@ -7,12 +7,14 @@ namespace CLF.Ingestion.Grains;
 
 public class TwitterIngestionGrain : BaseIngestionGrain
 {
-    public TwitterIngestionGrain(ILogger<TwitterIngestionGrain> logger) : base(logger) { }
+    public TwitterIngestionGrain(ILogger logger) : base(logger)
+    {
+    }
 
     protected override IDataSourceAdapter GetAdapter()
     {
         var httpClient = ServiceProvider.GetRequiredService<HttpClient>();
-        return new TwitterAdapter(httpClient, Logger);
+        return new TwitterAdapter(httpClient, _logger);
     }
 
     protected override string GetStreamNamespace() => "TWITTER";

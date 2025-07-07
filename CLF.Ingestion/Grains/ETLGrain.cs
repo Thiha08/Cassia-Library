@@ -8,27 +8,24 @@ namespace CLF.Ingestion.Grains;
 
 public class ETLGrain : Grain, IETLGrain
 {
-    private ILogger<ETLGrain> _logger;
+    private ILogger _logger;
     private ETLProcessingStatus _status = new();
     private ETLStatistics _statistics = new();
     private PipelineConfiguration? _config;
 
-    public ETLGrain(ILogger<ETLGrain> logger)
+    public ETLGrain(ILogger logger)
     {
         _logger = logger;
     }
 
-    public override async Task OnActivateAsync()
+    public override async Task OnActivateAsync(CancellationToken cancellationToken)
     {
+        await base.OnActivateAsync(cancellationToken);
+        _logger.LogInformation("ETL Grain activated with key: {GrainKey}", this.GetPrimaryKeyString());
         // Subscribe to all relevant ingestion streams (example: NASA_FIRMS, USGS, etc.)
-        var streamProvider = GetStreamProvider("IngestionStreamProvider");
-        var namespaces = new[] { "NASA_FIRMS", "USGS", "GDACS", "TWITTER", "CASSIA_USER_REPORT" };
-        foreach (var ns in namespaces)
-        {
-            var stream = streamProvider.GetStream<RawData>(this.GetPrimaryKeyString(), ns);
-            await stream.SubscribeAsync(this);
-        }
-        await base.OnActivateAsync();
+        var streamProvider = this.GetStreamProvider("IngestionStreamProvider");
+        var stream = streamProvider.GetStream<RawData>(this.GetPrimaryKeyString(), "ETL");
+        await stream.SubscribeAsync(this);
     }
 
     public Task InitializeAsync(PipelineConfiguration config)

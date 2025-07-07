@@ -139,7 +139,7 @@ export class CityLayerService {
 
     // Set normal style for visible features
     visibleFeatures.forEach(feature => {
-      feature.setStyle(null); // Use the layer's style function
+      feature.setStyle(); // Use the layer's style function
     });
 
     // Update the visible cities signal

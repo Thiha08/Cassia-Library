@@ -10,10 +10,10 @@ namespace CLF.Ingestion.Adapters;
 public class USGSAdapter : IDataSourceAdapter
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<USGSAdapter> _logger;
+    private readonly ILogger _logger;
     private readonly string _baseUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/";
 
-    public USGSAdapter(HttpClient httpClient, ILogger<USGSAdapter> logger)
+    public USGSAdapter(HttpClient httpClient, ILogger logger)
     {
         _httpClient = httpClient;
         _logger = logger;

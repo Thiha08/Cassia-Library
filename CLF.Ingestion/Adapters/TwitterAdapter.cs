@@ -10,10 +10,10 @@ namespace CLF.Ingestion.Adapters;
 public class TwitterAdapter : IDataSourceAdapter
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<TwitterAdapter> _logger;
+    private readonly ILogger _logger;
     private readonly string _baseUrl = "https://api.twitter.com/2/tweets/search/recent";
 
-    public TwitterAdapter(HttpClient httpClient, ILogger<TwitterAdapter> logger)
+    public TwitterAdapter(HttpClient httpClient, ILogger logger)
     {
         _httpClient = httpClient;
         _logger = logger;
@@ -163,9 +163,9 @@ public class TwitterAdapter : IDataSourceAdapter
                         {
                             if (includes.TryGetProperty("users", out var users))
                             {
-                                var authorId = tweet.TryGetProperty("author_id", out var authorIdProp) ? authorIdProp.GetString() : "";
+                                var tweetAuthorId = tweet.TryGetProperty("author_id", out var authorIdProp) ? authorIdProp.GetString() : "";
                                 var user = users.EnumerateArray().FirstOrDefault(u => 
-                                    u.TryGetProperty("id", out var userId) && userId.GetString() == authorId);
+                                    u.TryGetProperty("id", out var userId) && userId.GetString() == tweetAuthorId);
                                 
                                 if (user.ValueKind != JsonValueKind.Undefined)
                                 {
@@ -218,71 +218,5 @@ public class TwitterAdapter : IDataSourceAdapter
             return "Landslide";
         
         return "Unknown";
-    }
-
-    private async Task<ETLProcessingResult> ProcessRawDataInternalAsync(RawData rawData)
-    {
-        try
-        {
-            // 1. Deduplicate (pseudo-code)
-            var eventKey = $"{rawData.Metadata["Latitude"]}_{rawData.Metadata["Longitude"]}_{rawData.Metadata["Time"]}";
-            if (await IsDuplicateAsync(eventKey)) return new ETLProcessingResult { Success = false, RawDataId = rawData.Id };
-
-            // 2. Normalize
-            var cleanData = Normalize(rawData);
-
-            // 3. Enrich
-            var enrichedData = await EnrichAsync(cleanData);
-
-            // 4. Prepare outputs
-            var events = ExtractEvents(enrichedData);
-            var timeSeries = ExtractTimeSeries(enrichedData);
-            var geoData = ExtractGeoData(enrichedData);
-
-            // 5. Update metrics
-            _status.SuccessfullyProcessed++;
-            _statistics.SuccessfulRecords++;
-
-            return new ETLProcessingResult
-            {
-                Success = true,
-                RawDataId = rawData.Id,
-                CleanDataId = enrichedData.Id,
-                Events = events,
-                TimeSeriesData = timeSeries,
-                GeoData = geoData,
-                ProcessedAt = DateTime.UtcNow
-            };
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "ETL error for RawDataId: {RawDataId}", rawData.Id);
-            _status.FailedProcessing++;
-            _statistics.FailedRecords++;
-            return new ETLProcessingResult { Success = false, RawDataId = rawData.Id, ErrorMessage = ex.Message };
-        }
-    }
-
-    public async Task<EventStoreResult> StoreProcessedDataAsync(ETLProcessingResult processedData)
-    {
-        try
-        {
-            // Example: Write to PostGIS, TimescaleDB, or Blob Storage
-            await _dbContext.Events.AddRangeAsync(processedData.Events);
-            await _dbContext.TimeSeriesData.AddRangeAsync(processedData.TimeSeriesData);
-            await _dbContext.GeoData.AddRangeAsync(processedData.GeoData);
-            await _dbContext.SaveChangesAsync();
-
-            _status.SuccessfullyStored++;
-            _statistics.SuccessfulStores++;
-            return new EventStoreResult { Success = true, ProcessedDataId = processedData.CleanDataId ?? Guid.NewGuid(), StoredAt = DateTime.UtcNow };
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Storage error for CleanDataId: {CleanDataId}", processedData.CleanDataId);
-            _status.FailedStorage++;
-            _statistics.FailedStores++;
-            return new EventStoreResult { Success = false, ProcessedDataId = processedData.CleanDataId ?? Guid.NewGuid(), ErrorMessage = ex.Message, StoredAt = DateTime.UtcNow };
-        }
     }
 } 

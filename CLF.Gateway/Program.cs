@@ -1,4 +1,3 @@
-using CLF.Shared.Interfaces;
 using CLF.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "CLF Gateway API", Version = "v1" });
-    c.EnableAnnotations();
 });
 
 // Configure SignalR

@@ -7,12 +7,14 @@ namespace CLF.Ingestion.Grains;
 
 public class USGSIngestionGrain : BaseIngestionGrain
 {
-    public USGSIngestionGrain(ILogger<USGSIngestionGrain> logger) : base(logger) { }
+    public USGSIngestionGrain(ILogger logger) : base(logger)
+    {
+    }
 
     protected override IDataSourceAdapter GetAdapter()
     {
         var httpClient = ServiceProvider.GetRequiredService<HttpClient>();
-        return new USGSAdapter(httpClient, Logger);
+        return new USGSAdapter(httpClient, _logger);
     }
 
     protected override string GetStreamNamespace() => "USGS";

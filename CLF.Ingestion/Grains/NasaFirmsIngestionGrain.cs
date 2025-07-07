@@ -8,16 +8,18 @@ namespace CLF.Ingestion.Grains;
 /// <summary>
 /// NASA FIRMS ingestion grain for satellite fire detection data
 /// </summary>
-public class NasaFirmsIngestionGrain : BaseIngestionGrain
+public class NasaFirmsIngestionGrain : BaseIngestionGrain, INasaFirmsIngestionGrain
 {
-    public NasaFirmsIngestionGrain(ILogger<NasaFirmsIngestionGrain> logger) : base(logger)
+    public NasaFirmsIngestionGrain(ILogger logger) : base(logger)
     {
     }
 
     protected override IDataSourceAdapter GetAdapter()
     {
-        var httpClient = ServiceProvider.GetRequiredService<HttpClient>();
-        return new NasaFirmsAdapter(httpClient, Logger);
+        var httpClientFactory = ServiceProvider.GetRequiredService<IHttpClientFactory>();
+        var loggerFactory = ServiceProvider.GetRequiredService<ILoggerFactory>();
+        var adapterLogger = loggerFactory.CreateLogger<NasaFirmsAdapter>();
+        return new NasaFirmsAdapter(httpClientFactory, adapterLogger);
     }
 
     protected override string GetStreamNamespace()
@@ -46,6 +48,22 @@ public class NasaFirmsIngestionGrain : BaseIngestionGrain
         // Add NASA FIRMS specific metrics
         result.Metadata["SatelliteSystem"] = "VIIRS_SNPP";
         result.Metadata["DataProduct"] = "Fire Detection";
+        result.Metadata["ApiVersion"] = "4.0.11";
+        result.Metadata["DataProvider"] = "NASA";
+        
+        return result;
+    }
+
+    protected override async Task<IngestionResult> PollDataAsync(object? state)
+    {
+        var result = await base.PollDataAsync(state);
+        
+        if (result.Success)
+        {
+            // Add NASA FIRMS specific processing
+            _logger.LogInformation("NASA FIRMS data fetch completed with {Records} records", 
+                result.RecordsProcessed);
+        }
         
         return result;
     }

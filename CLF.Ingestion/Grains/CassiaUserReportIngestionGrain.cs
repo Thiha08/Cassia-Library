@@ -8,11 +8,13 @@ namespace CLF.Ingestion.Grains;
 
 public class CassiaUserReportIngestionGrain : BaseIngestionGrain
 {
-    public CassiaUserReportIngestionGrain(ILogger<CassiaUserReportIngestionGrain> logger) : base(logger) { }
+    public CassiaUserReportIngestionGrain(ILogger logger) : base(logger)
+    {
+    }
 
     protected override IDataSourceAdapter GetAdapter()
     {
-        return new CassiaUserReportAdapter(Logger);
+        return new CassiaUserReportAdapter(_logger);
     }
 
     protected override string GetStreamNamespace() => "CASSIA_USER_REPORT";

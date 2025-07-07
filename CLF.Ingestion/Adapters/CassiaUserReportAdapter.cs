@@ -9,9 +9,9 @@ namespace CLF.Ingestion.Adapters;
 /// </summary>
 public class CassiaUserReportAdapter : IDataSourceAdapter
 {
-    private readonly ILogger<CassiaUserReportAdapter> _logger;
+    private readonly ILogger _logger;
 
-    public CassiaUserReportAdapter(ILogger<CassiaUserReportAdapter> logger)
+    public CassiaUserReportAdapter(ILogger logger)
     {
         _logger = logger;
     }

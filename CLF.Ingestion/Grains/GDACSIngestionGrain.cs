@@ -7,12 +7,14 @@ namespace CLF.Ingestion.Grains;
 
 public class GDACSIngestionGrain : BaseIngestionGrain
 {
-    public GDACSIngestionGrain(ILogger<GDACSIngestionGrain> logger) : base(logger) { }
+    public GDACSIngestionGrain(ILogger logger) : base(logger)
+    {
+    }
 
     protected override IDataSourceAdapter GetAdapter()
     {
         var httpClient = ServiceProvider.GetRequiredService<HttpClient>();
-        return new GDACSAdapter(httpClient, Logger);
+        return new GDACSAdapter(httpClient, _logger);
     }
 
     protected override string GetStreamNamespace() => "GDACS";

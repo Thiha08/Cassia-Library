@@ -4,9 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using CLF.Ingestion.Adapters;
 using CLF.Ingestion.Grains;
 using CLF.Ingestion.Grains.Interfaces;
+using CLF.Ingestion.Schedulers;
+using CLF.Ingestion.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Orleans;
 using Orleans.Hosting;
+using Orleans.Streams;
+using Orleans.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +22,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "CLF Ingestion API", Version = "v1" });
-    c.EnableAnnotations();
 });
 
 // Configure SignalR
@@ -58,35 +61,36 @@ builder.Services.AddDbContext<CLFDbContext>(options =>
 builder.Services.AddHttpClient("ETLService", client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Services:ETL"] ?? "https://localhost:5002");
+    client.Timeout = TimeSpan.FromMinutes(5);
 });
 
 builder.Services.AddHttpClient("StorageService", client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["Services:Storage"] ?? "https://localhost:5003");
+    client.Timeout = TimeSpan.FromMinutes(5);
 });
 
-// Register adapters
+// Register adapters with HTTP client factory
 builder.Services.AddHttpClient<NasaFirmsAdapter>();
 builder.Services.AddHttpClient<USGSAdapter>();
 builder.Services.AddHttpClient<GDACSAdapter>();
 builder.Services.AddHttpClient<TwitterAdapter>();
 builder.Services.AddSingleton<CassiaUserReportAdapter>();
 
-// Register grains
-builder.Services.AddSingleton<NasaFirmsIngestionGrain>();
-builder.Services.AddSingleton<USGSIngestionGrain>();
-builder.Services.AddSingleton<GDACSIngestionGrain>();
-builder.Services.AddSingleton<TwitterIngestionGrain>();
-builder.Services.AddSingleton<CassiaUserReportIngestionGrain>();
-builder.Services.AddSingleton<ETLGrain>();
-builder.Services.AddSingleton<EventStoreGrain>();
+// Register factories and services
+builder.Services.AddSingleton<IDataSourceFactory, DataSourceFactory>();
+builder.Services.AddSingleton<DataSourceRegistry>();
+
+// Register schedulers
 builder.Services.AddSingleton<IngestionScheduler>();
+builder.Services.AddSingleton<EnhancedIngestionScheduler>();
 
 // Configure logging
 builder.Services.AddLogging(logging =>
 {
     logging.AddConsole();
     logging.AddDebug();
+    logging.SetMinimumLevel(LogLevel.Information);
 });
 
 // Orleans setup
@@ -95,7 +99,15 @@ builder.Host.UseOrleans(siloBuilder =>
     siloBuilder
         .UseLocalhostClustering()
         .AddMemoryGrainStorage("Default")
-        .AddSimpleMessageStreamProvider("IngestionStreamProvider");
+        .AddMemoryGrainStorage("PubSubStore")
+        .AddMemoryStreams("IngestionStreamProvider");
+
+    // Configure serialization for CLF.Shared.Models
+    siloBuilder.Services.AddSerializer(serializerBuilder =>
+    {
+        serializerBuilder.AddJsonSerializer(
+            isSupported: type => type.Namespace?.StartsWith("CLF.Shared.Models") == true);
+    });
 });
 
 var app = builder.Build();
@@ -108,6 +120,7 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "CLF Ingestion API v1");
         c.RoutePrefix = string.Empty; // Serve Swagger UI at root
+        c.DocumentTitle = "CLF Ingestion API Documentation";
     });
 }
 
@@ -121,6 +134,13 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Health check endpoint
-app.MapGet("/health", () => new { Status = "Healthy", Service = "Ingestion", Timestamp = DateTime.UtcNow });
+app.MapGet("/health", () => new { 
+    Status = "Healthy", 
+    Service = "Ingestion", 
+    Timestamp = DateTime.UtcNow,
+    Version = "1.0.0"
+});
+
+
 
 app.Run();

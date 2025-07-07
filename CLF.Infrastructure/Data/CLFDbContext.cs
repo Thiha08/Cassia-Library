@@ -92,7 +92,7 @@ public class CLFDbContext : DbContext
             entity.Property(e => e.EventType).IsRequired().HasMaxLength(100);
             entity.Property(e => e.AggregateId).IsRequired().HasMaxLength(100);
             entity.Property(e => e.Version).IsRequired();
-            entity.Property(e => e.EventData).HasConversion(
+            entity.Property(e => e.Data).HasConversion(
                 v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
                 v => System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(v, (System.Text.Json.JsonSerializerOptions?)null) ?? new Dictionary<string, object>()
             );

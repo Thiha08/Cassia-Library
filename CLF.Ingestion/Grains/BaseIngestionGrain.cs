@@ -24,21 +24,22 @@ public abstract class BaseIngestionGrain : Grain, IIngestionGrain
         _status = new IngestionGrainStatus();
     }
 
-    public override async Task OnActivateAsync()
+    public override async Task OnActivateAsync(CancellationToken cancellationToken)
     {
         // Set up Orleans stream for publishing raw data
-        var streamProvider = GetStreamProvider("IngestionStreamProvider");
+        var streamProvider = this.GetStreamProvider("IngestionStreamProvider");
         _stream = streamProvider.GetStream<RawData>(this.GetPrimaryKeyString(), GetStreamNamespace());
         
-        await base.OnActivateAsync();
+        await base.OnActivateAsync(cancellationToken);
         
         _logger.LogInformation("Activated {GrainType} with key: {GrainKey}", this.GetType().Name, this.GetPrimaryKeyString());
     }
 
-    public override async Task OnDeactivateAsync()
+    public override async Task OnDeactivateAsync(DeactivationReason reason, CancellationToken cancellationToken)
     {
         _timer?.Dispose();
-        await base.OnDeactivateAsync();
+        _timer = null;
+        await base.OnDeactivateAsync(reason, cancellationToken);
         
         _logger.LogInformation("Deactivated {GrainType} with key: {GrainKey}", this.GetType().Name, this.GetPrimaryKeyString());
     }

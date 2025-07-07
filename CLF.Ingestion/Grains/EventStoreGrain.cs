@@ -8,23 +8,20 @@ namespace CLF.Ingestion.Grains;
 
 public class EventStoreGrain : Grain, IEventStoreGrain
 {
-    private ILogger<EventStoreGrain> _logger;
+    private ILogger _logger;
     private EventStoreStatus _status = new();
     private EventStoreStatistics _statistics = new();
     private Dictionary<string, object>? _storageConfig;
 
-    public EventStoreGrain(ILogger<EventStoreGrain> logger)
+    public EventStoreGrain(ILogger logger)
     {
         _logger = logger;
     }
 
-    public override async Task OnActivateAsync()
+    public override async Task OnActivateAsync(CancellationToken cancellationToken)
     {
-        // Subscribe to ETLGrain output stream (example namespace: "ETL")
-        var streamProvider = GetStreamProvider("IngestionStreamProvider");
-        var stream = streamProvider.GetStream<ETLProcessingResult>(this.GetPrimaryKeyString(), "ETL");
-        await stream.SubscribeAsync(this);
-        await base.OnActivateAsync();
+        await base.OnActivateAsync(cancellationToken);
+        _logger.LogInformation("Event Store Grain activated with key: {GrainKey}", this.GetPrimaryKeyString());
     }
 
     public Task InitializeAsync(Dictionary<string, object> storageConfig)

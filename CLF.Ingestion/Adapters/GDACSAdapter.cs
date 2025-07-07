@@ -11,10 +11,10 @@ namespace CLF.Ingestion.Adapters;
 public class GDACSAdapter : IDataSourceAdapter
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<GDACSAdapter> _logger;
+    private readonly ILogger _logger;
     private readonly string _baseUrl = "https://www.gdacs.org/xml/rss.xml";
 
-    public GDACSAdapter(HttpClient httpClient, ILogger<GDACSAdapter> logger)
+    public GDACSAdapter(HttpClient httpClient, ILogger logger)
     {
         _httpClient = httpClient;
         _logger = logger;
