@@ -18,19 +18,25 @@ The Cassia Library Framework (CLF) is a scalable, maintainable data processing p
 
 ## 🏗️ Architecture
 
-The CLF follows a microservices pattern with the following core components:
+The CLF follows a microservices pattern with both backend services and a modern frontend application:
 
 ```
-External Data Sources → CLF.Gateway → CLF.Ingestion → CLF.ETL → CLF.Storage → CLF.Orleans
+CLF.App (Angular Client) ↔ CLF.Gateway → CLF.Ingestion → CLF.ETL → CLF.Storage → CLF.Orleans
+                                ↑
+                        External Data Sources
 ```
 
-### Core Services
+### Backend Services
 
 - **CLF.Gateway** (Port 5000): API Gateway and request orchestration
 - **CLF.Ingestion** (Port 5001): Data ingestion from external sources
 - **CLF.ETL** (Port 5002): Extract, Transform, Load processing
 - **CLF.Storage** (Port 5003): Data storage and retrieval
 - **CLF.Orleans** (Port 5004): Distributed computing layer
+
+### Frontend Application
+
+- **CLF.App**: Modern Angular 19 Progressive Web App with advanced visualization capabilities
 
 ### Supporting Libraries
 
@@ -39,6 +45,7 @@ External Data Sources → CLF.Gateway → CLF.Ingestion → CLF.ETL → CLF.Stor
 
 ## 🛠️ Technology Stack
 
+### Backend
 - **.NET 8**: Core framework
 - **ASP.NET Core**: Web API development
 - **Entity Framework Core**: Object-relational mapping
@@ -46,6 +53,15 @@ External Data Sources → CLF.Gateway → CLF.Ingestion → CLF.ETL → CLF.Stor
 - **SQL Server**: Primary database
 - **SignalR**: Real-time communication
 - **Docker**: Containerization ready
+
+### Frontend
+- **Angular 19**: Modern web application framework
+- **Angular Material**: Material Design components
+- **TypeScript**: Type-safe JavaScript
+- **RxJS**: Reactive programming
+- **OpenLayers**: Advanced mapping and GIS visualization
+- **ApexCharts**: Interactive charts and graphs
+- **Progressive Web App (PWA)**: Offline capabilities and mobile-first design
 
 ## 🚦 Quick Start
 
@@ -85,6 +101,100 @@ External Data Sources → CLF.Gateway → CLF.Ingestion → CLF.ETL → CLF.Stor
    - Gateway: `http://localhost:5000`
    - Health Check: `http://localhost:5000/health`
    - API Status: `http://localhost:5000/api/status`
+
+### Client Application Setup
+
+1. **Navigate to the client directory**
+   ```bash
+   cd clf.app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+4. **Access the application**
+   - Client App: `https://localhost:4200`
+   - Login with your credentials to access the dashboard
+
+## 🖥️ CLF.App - Frontend Application
+
+The CLF.App is a sophisticated Angular-based Progressive Web Application that provides a comprehensive interface for managing and visualizing data from the CLF pipeline.
+
+### Key Features
+
+#### 📊 **Advanced Dashboards**
+- **Multiple Dashboard Views**: Two specialized dashboard layouts for different data perspectives
+- **Real-time Data Visualization**: Live updates of ingestion status and pipeline metrics
+- **Interactive Charts**: ApexCharts integration for dynamic data visualization
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+
+#### 🗺️ **Geospatial Visualization**
+- **7 Specialized Mapboards**: Different analytical views for geospatial data
+- **OpenLayers Integration**: Advanced mapping capabilities with multiple layer support
+- **Real-time Data Overlays**: Live visualization of NASA FIRMS, USGS, and GDACS data
+- **Interactive Map Controls**: Zoom, pan, layer management, and data filtering
+
+#### 📱 **Progressive Web App (PWA)**
+- **Offline Capabilities**: Continue working even without internet connection
+- **Push Notifications**: Real-time alerts for data pipeline events
+- **Mobile-First Design**: Optimized for mobile devices and tablets
+- **App-like Experience**: Install directly on devices like a native app
+
+#### 🔐 **Security & Authentication**
+- **User Authentication**: Secure login and session management
+- **Role-Based Access Control**: Different permissions for different user types
+- **Protected Routes**: Secure access to sensitive data and administrative functions
+
+#### 🛠️ **Application Modules**
+- **Data Management**: Tables and forms for managing ingested data
+- **Task Management**: Kanban boards and task tracking for pipeline operations
+- **Calendar Integration**: Schedule and track data ingestion jobs
+- **Contact Management**: User and stakeholder management
+- **Reporting**: Generate and export reports on data pipeline performance
+
+#### 📈 **Monitoring & Analytics**
+- **Real-time Status Monitoring**: Live pipeline health and performance metrics
+- **Data Quality Metrics**: Validation results and data integrity reports
+- **Performance Analytics**: Ingestion rates, processing times, and error rates
+- **Custom Widgets**: Configurable dashboard widgets for specific metrics
+
+### Application Structure
+
+```
+clf.app/
+├── src/
+│   ├── app/
+│   │   ├── pages/
+│   │   │   ├── dashboards/     # Main dashboard views
+│   │   │   ├── mapboards/      # Geospatial visualization
+│   │   │   ├── apps/           # Application modules
+│   │   │   ├── charts/         # Chart components
+│   │   │   ├── forms/          # Data input forms
+│   │   │   ├── tables/         # Data tables
+│   │   │   └── authentication/ # User authentication
+│   │   ├── services/           # API services
+│   │   ├── components/         # Reusable UI components
+│   │   └── layouts/            # Application layouts
+│   └── assets/                 # Static assets
+└── package.json               # Dependencies and scripts
+```
+
+### Available Views
+
+- **Main Dashboard**: Overview of entire data pipeline status
+- **Mapboard I-VII**: Specialized analytical mapping views
+- **Data Tables**: Tabular view of ingested and processed data
+- **Charts & Analytics**: Visual representation of pipeline metrics
+- **Forms**: Configuration and data input interfaces
+- **Task Management**: Pipeline job scheduling and monitoring
+- **User Management**: Authentication and user administration
 
 ## 📚 Data Sources
 
