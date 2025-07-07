@@ -6,8 +6,42 @@ A sophisticated microservices-based data pipeline framework built on .NET 8 that
 
 The Cassia Library Framework (CLF) is a scalable, maintainable data processing platform that follows clean architecture principles and leverages Microsoft Orleans for distributed computing. It provides a robust foundation for ingesting data from multiple external sources, transforming it, and making it available through a unified API.
 
+## 🌍 Mission: Cassia Map - Humanitarian Geospatial Platform
+
+**Cassia Map** is a humanitarian geospatial platform developed under the Cassia Library initiative, designed to provide real-time disaster awareness and location-based insights for communities across Myanmar. The platform transforms raw event data into clear, accessible, and life-saving information during times of crisis.
+
+### 🎯 **Core Purpose**
+The platform streams up-to-date data on natural hazards such as **floods, cyclones, earthquakes, and fires**—aggregating from multiple open and trusted sources including NASA FIRMS, USGS, and GDACS. Using scalable cloud-native architecture and AI-assisted enrichment, Cassia Map processes and visualizes this information on an interactive map interface that supports time filtering, historical timelines, and geospatial overlays.
+
+### 🌐 **Accessibility & Reach**
+One of the platform's core goals is accessibility. Cassia Map is optimized for:
+- **Low-connectivity environments** and mobile devices
+- **Offline-first PWA support** for areas with limited internet access
+- **Multilingual AI chat assistance** to help users understand risk in real-time
+- **Mobile-optimized interfaces** for widespread smartphone access
+
+### 🏗️ **Technical Foundation**
+The backend combines a geospatial event pipeline with a resilient, maintainable architecture designed to scale as user needs grow. The CLF serves as the technical backbone that:
+- Ingests real-time disaster data from multiple international sources
+- Processes and enriches geospatial information with AI assistance
+- Delivers timely, accurate information through modern web interfaces
+- Maintains high availability during crisis situations when it's needed most
+
+### 🎯 **Broader Vision**
+This project represents the first major layer of the broader **Cassia Library ecosystem**—a knowledge and resource platform focused on safety, education, and practical guidance during emergencies. It reflects a commitment to building reliable, human-centered systems that serve those most in need, using technology as a force for preparedness, understanding, and support.
+
+**Every line of code in this framework serves a humanitarian purpose: keeping communities safe, informed, and prepared.**
+
 ## ✨ Key Features
 
+### 🛡️ **Humanitarian-Focused Capabilities**
+- **Real-time Disaster Monitoring**: Live tracking of floods, cyclones, earthquakes, and fires
+- **Multi-Source Intelligence**: Aggregates data from NASA FIRMS, USGS, GDACS, and social media
+- **Crisis-Ready Architecture**: High availability and reliability during emergency situations
+- **Accessibility-First Design**: Optimized for low-connectivity and mobile environments
+- **Community Safety**: Location-based insights and risk assessment for vulnerable populations
+
+### ⚙️ **Technical Excellence**
 - **Microservices Architecture**: Scalable, independent services that can be deployed and scaled individually
 - **Distributed Computing**: Built on Microsoft Orleans for fault-tolerant, scalable processing
 - **Multi-Source Data Ingestion**: Supports various data sources including APIs, databases, and file systems
@@ -263,12 +297,20 @@ Each service has its own `appsettings.json` with:
 
 ## 🔮 Future Enhancements
 
+### 🌍 **Humanitarian Features**
+- **Multilingual AI Chat**: Real-time risk assessment and guidance in local languages
+- **Offline-First PWA**: Complete offline functionality for disconnected environments
+- **Community Reporting**: User-generated incident reports and community alerts
+- **Predictive Analytics**: AI-powered early warning systems for disaster prediction
+- **Mobile SMS Integration**: Critical alerts via SMS for areas without internet access
+
+### 🛠️ **Technical Improvements**
 - **Message Queuing**: RabbitMQ or Azure Service Bus integration
 - **Event Sourcing**: Complete event sourcing implementation
 - **CQRS**: Command Query Responsibility Segregation
 - **GraphQL**: Alternative API interface
 - **Kubernetes**: Container orchestration deployment
-- **Machine Learning**: ML.NET integration for data insights
+- **Machine Learning**: ML.NET integration for enhanced data insights
 
 ## 📖 Documentation
 
@@ -287,11 +329,26 @@ Each service has its own `appsettings.json` with:
 
 ## 🆘 Support
 
-For questions, issues, or contributions:
+This project serves humanitarian purposes and community safety. For questions, issues, or contributions:
+
+### 🤝 **For Developers & Contributors**
 - Check the [documentation](./ARCHITECTURE.md)
-- Review existing issues
+- Review existing issues and feature requests
 - Create a new issue with detailed information
-- Contact the development team
+- Contact the development team for collaboration opportunities
+
+### 🌍 **For Humanitarian Organizations**
+- Partnership opportunities for data sharing and integration
+- Implementation support for other regions and communities
+- Training and capacity building for local teams
+- Custom deployment assistance for specific needs
+
+### 🚨 **For Emergency Responders**
+- Direct API access for emergency management systems
+- Real-time data feeds for crisis response coordination
+- Integration support for existing emergency response platforms
+
+**This platform is built to save lives and serve communities in need. We welcome all contributions that advance this mission.**
 
 ## 📄 License
 
@@ -299,4 +356,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Built with ❤️ using .NET 8 and Microsoft Orleans**
+**Built with ❤️ for humanitarian impact using .NET 8, Microsoft Orleans, and Angular 19**  
+*"Technology serving humanity, one community at a time"*
