@@ -6,31 +6,41 @@ A sophisticated microservices-based data pipeline framework built on .NET 8 that
 
 The Cassia Library Framework (CLF) is a scalable, maintainable data processing platform that follows clean architecture principles and leverages Microsoft Orleans for distributed computing. It provides a robust foundation for ingesting data from multiple external sources, transforming it, and making it available through a unified API.
 
-## 🌍 Mission: Cassia Map - Humanitarian Geospatial Platform
+## � Project Story: Building Technology for Humanitarian Impact
 
-**Cassia Map** is a humanitarian geospatial platform developed under the Cassia Library initiative, designed to provide real-time disaster awareness and location-based insights for communities across Myanmar. The platform transforms raw event data into clear, accessible, and life-saving information during times of crisis.
+Cassia Map is a humanitarian geospatial platform developed under the Cassia Library initiative, designed to provide real-time disaster awareness and location-based insights for communities across Myanmar. As Lead Developer, the system was built to turn raw event data into clear, accessible, and life-saving information during times of crisis.
 
-### 🎯 **Core Purpose**
-The platform streams up-to-date data on natural hazards such as **floods, cyclones, earthquakes, and fires**—aggregating from multiple open and trusted sources including NASA FIRMS, USGS, and GDACS. Using scalable cloud-native architecture and AI-assisted enrichment, Cassia Map processes and visualizes this information on an interactive map interface that supports time filtering, historical timelines, and geospatial overlays.
+The platform streams up-to-date data on natural hazards such as floods, cyclones, earthquakes, and fires—aggregating from multiple open and trusted sources. Using scalable cloud-native architecture and AI-assisted enrichment, Cassia Map processes and visualizes this information on an interactive map interface that supports time filtering, historical timelines, and geospatial overlays.
 
-### 🌐 **Accessibility & Reach**
-One of the platform's core goals is accessibility. Cassia Map is optimized for:
-- **Low-connectivity environments** and mobile devices
+One of the platform's core goals is accessibility. Cassia Map is optimized for low-connectivity environments and mobile devices, with a roadmap that includes offline-first PWA support and multilingual AI chat assistance to help users understand risk in real time. The backend combines a geospatial event pipeline with a resilient, maintainable architecture designed to scale as user needs grow.
+
+This project represents the first major layer of the broader Cassia Library ecosystem—a knowledge and resource platform focused on safety, education, and practical guidance during emergencies. It reflects a commitment to building reliable, human-centered systems that serve those most in need, using technology as a force for preparedness, understanding, and support.
+
+## �🌍 Mission: Cassia Map - Humanitarian Geospatial Platform
+
+**Cassia Map** is a humanitarian geospatial platform developed under the Cassia Library initiative, designed to provide real-time disaster awareness and location-based insights for communities across Myanmar. Built to turn raw event data into clear, accessible, and life-saving information during times of crisis.
+
+### 🎯 **Transforming Data into Life-Saving Information**
+The platform streams up-to-date data on natural hazards such as **floods, cyclones, earthquakes, and fires**—aggregating from multiple open and trusted sources. Using scalable cloud-native architecture and AI-assisted enrichment, Cassia Map processes and visualizes this information on an interactive map interface that supports time filtering, historical timelines, and geospatial overlays.
+
+### 🌐 **Accessibility as a Core Goal**
+One of the platform's core goals is accessibility. Cassia Map is optimized for low-connectivity environments and mobile devices, with a roadmap that includes:
 - **Offline-first PWA support** for areas with limited internet access
 - **Multilingual AI chat assistance** to help users understand risk in real-time
-- **Mobile-optimized interfaces** for widespread smartphone access
+- **Mobile-optimized interfaces** designed for widespread smartphone access
+- **Low-bandwidth optimization** ensuring critical information reaches those who need it most
 
-### 🏗️ **Technical Foundation**
-The backend combines a geospatial event pipeline with a resilient, maintainable architecture designed to scale as user needs grow. The CLF serves as the technical backbone that:
-- Ingests real-time disaster data from multiple international sources
-- Processes and enriches geospatial information with AI assistance
-- Delivers timely, accurate information through modern web interfaces
-- Maintains high availability during crisis situations when it's needed most
+### 🏗️ **Resilient Technical Architecture**
+The backend combines a geospatial event pipeline with a resilient, maintainable architecture designed to scale as user needs grow. The CLF framework provides:
+- **Real-time data ingestion** from multiple international disaster monitoring sources
+- **AI-assisted data enrichment** for enhanced situational awareness
+- **Scalable cloud-native infrastructure** that maintains performance under load
+- **High availability design** ensuring access during critical emergency periods
 
-### 🎯 **Broader Vision**
+### � **Vision: Technology as a Force for Good**
 This project represents the first major layer of the broader **Cassia Library ecosystem**—a knowledge and resource platform focused on safety, education, and practical guidance during emergencies. It reflects a commitment to building reliable, human-centered systems that serve those most in need, using technology as a force for preparedness, understanding, and support.
 
-**Every line of code in this framework serves a humanitarian purpose: keeping communities safe, informed, and prepared.**
+**The Cassia Library Framework transforms complex technical capabilities into simple, accessible tools that keep communities safe. Every architectural decision, every line of code, and every feature serves the ultimate goal of protecting human life and empowering communities with the information they need to stay safe.**
 
 ## ✨ Key Features
 
